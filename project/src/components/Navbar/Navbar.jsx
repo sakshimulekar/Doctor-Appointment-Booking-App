@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Box, Button, Text } from "@chakra-ui/react";
+import { Box, Button, Image, Text } from "@chakra-ui/react";
 export const Navbar = () => {
   return (
     <Box
@@ -9,12 +9,19 @@ export const Navbar = () => {
       p={"5"}
       w={"100%"}
       h={"100px"}
-      box-shadow="rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px"
+      boxShadow="md"
       top={"0"}
       backgroundColor={"#fafaf1"}
     >
-      <Box>Logo</Box>
-      <Box display={"flex"} gap={"5"} alignItems={"center"}>
+      <Box>
+        <Image src="../../assets/logo.jpg" alt="logo" />
+      </Box>
+      <Box
+        display={"flex"}
+        gap={"5"}
+        alignItems={"center"}
+        _hover={"textDecoration=underline"}
+      >
         <Link to={"/"}>
           <Box>
             <Text color={"#61876e"} as={"b"}>
