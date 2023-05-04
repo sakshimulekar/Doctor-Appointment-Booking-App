@@ -29,8 +29,8 @@ export const SinglePage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {...input,
-      doctor:"Dr.nargdeen",
-      hospital:"KMC Hospital"}
+      doctor:"",
+      hospital:""}
     dispatch(postPatient(data))
   }
 
