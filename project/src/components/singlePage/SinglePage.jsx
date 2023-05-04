@@ -1,123 +1,155 @@
 import React, { useState } from 'react';
-import {FormControl,FormHelperText,FormErrorMessage,Input, Box, Button} from "@chakra-ui/react";
-import {useDispatch, useSelector} from "react-redux";
+import { Center, Input, Box, Button, Select } from "@chakra-ui/react";
+import { useDispatch, useSelector } from "react-redux";
 import { postPatient } from '../../redux/PatientReducer/action';
 
 const initial = {
-  date:"",
-  patient_name : "",
-  Address : "",
-  mobile:"",
-  email:"",
-  age:"",
-  gender:"",
-  description:""
+  date: "",
+  patient_name: "",
+  Address: "",
+  mobile: "",
+  email: "",
+  age: "",
+  gender: "",
+  description: "",
+  time: ""
 }
+
 
 export const SinglePage = () => {
 
-  const patient = useSelector(store=>store.patients)
+  const patient = useSelector(store => store.patients)
   const dispatch = useDispatch();
   const [input, setInput] = useState(initial)
 
+  
   const handleInputChange = (e) => {
-    setInput((prev)=>{
-      return {...prev,[e.target.name]:e.target.value}
+    setInput((prev) => {
+      return { ...prev, [e.target.name]: e.target.value }
     })
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = {...input,
-      doctor:"",
-      hospital:""}
+    const data = {
+      ...input,
+      status: false,
+      doctor: "Dr. Michael Johnson",
+      hospital: "321 Maple St, Anytown, USA",
+      fees: "$200"
+    }
     dispatch(postPatient(data))
+    setInput(initial)
   }
 
   return (
-    <Box w="60%"  border='1px' borderColor='black'>
+    <Box w={"80%"} axis='both' border='1px' borderColor='black'>
 
       <form onSubmit={handleSubmit}>
-  
-      <h1>Request Appointment with</h1>
-      <h1>Dr.Nardeen</h1>
-      
-      <Box 
-        ml={"20%"}h="40px" 
-        borderRadius="5" 
-        w="60%" border='1px' 
-        borderColor='black'>
-          KMC Hospital
-      </Box>
-      
-      <Input 
-        w="60%" 
-        type='date' name='date'
-        value={input.date} 
-        onChange={handleInputChange} 
-        placeholder={"select appoiontment date"} 
-      />
 
-      <Input 
-        w="60%" 
-        type='text' name="patient_name"
-        value={input.patient_name} 
-        onChange={handleInputChange} 
-        placeholder={"Patient Name"} 
-      />
-      
-      <Input 
-        w="60%" type='text' name="Address"
-        placeholder='Address' 
-        value={input.Address} 
-        onChange={handleInputChange} 
-      />
-      
-      <Input 
-        w="60%" type='texy' 
-        placeholder='Mobile No.' 
-        value={input.mobile} name='mobile'
-        onChange={handleInputChange} 
-      />
-      
-      <Input 
-        w="60%" 
-        type='email' name="email"
-        placeholder='Email Id' 
-        value={input.email} onChange={handleInputChange} 
-      />
-      
-      <Input 
-        w="60%" type='text' 
-        placeholder='Age' name="age"
-        value={input.age} onChange={handleInputChange} 
-      />
+        <h1>Request Appointment with</h1>
+        <h1>Dr.Nardeen</h1>
 
-      <Input 
-        w="60%" type='text' 
-        placeholder='gender' name="gender"
-        value={input.gender} 
-        onChange={handleInputChange} 
-      />
+        <Box>KMC Hospital</Box>
 
-      <Input 
-        w="60%" type='text' 
-        placeholder='description' name="description"
-        value={input.description} 
-        onChange={handleInputChange} 
-      />
-      <br />
-      <Button
-          mt={4}
-          colorScheme='teal'
+        <Center>Select Date</Center>
+        <Input
+          type='date' name='date'
+          value={input.date}
+          onChange={handleInputChange}
+          placeholder={"select appoiontment date"}
+        />
+
+        <Select placeholder='Select time'
+          name="time" value={input.time}
+          onChange={handleInputChange}>
+          <option value="9.00 AM">9.00 AM</option>
+          <option value="9.30 AM">9.30 AM</option>
+          <option value="10.00 AM">10.00 AM</option>
+          <option value="10.30 AM">10.30 AM</option>
+          <option value="11.00 AM">11.00 AM</option>
+          <option value="11.30 AM">11.30 AM</option>
+          <option value="12.00 PM">12.00 PM</option>
+          <option value="1.30 PM">1.30 PM</option>
+          <option value="1.00 PM">1.00 PM</option>
+          <option value="1.30 PM">1.30 PM</option>
+          <option value="2.00 PM">2.00 PM</option>
+          <option value="2.30 PM">2.30 PM</option>
+          <option value="3.00 PM">3.00 PM</option>
+          <option value="3.30 PM">3.30 PM</option>
+          <option value="4.00 PM">4.00 PM</option>
+          <option value="4.30 PM">4.30 PM</option>
+          <option value="5.00 PM">5.00 PM</option>
+          <option value="5.00 PM">5.30 PM</option>
+          <option value="6.00 PM">6.00 PM</option>
+          <option value="6.30 PM">6.30 PM</option>
+          <option value="7.00 PM">7.00 PM</option>
+          <option value="7.30 PM">7.30 PM</option>
+          <option value="8.00 PM">8.00 PM</option>
+          <option value="8.30 PM">8.30 PM</option>
+
+        </Select>
+
+        <Input
+
+          type='text' name="patient_name"
+          value={input.patient_name}
+          onChange={handleInputChange}
+          placeholder={"Patient Name"}
+        />
+
+        <Input
+          type='text' name="Address"
+          placeholder='Address'
+          value={input.Address}
+          onChange={handleInputChange}
+        />
+
+        <Input
+          type='texy'
+          placeholder='Mobile No.'
+          value={input.mobile} name='mobile'
+          onChange={handleInputChange}
+        />
+
+        <Input
+
+          type='email' name="email"
+          placeholder='Email Id'
+          value={input.email} onChange={handleInputChange}
+        />
+
+        <Input
+          type='text'
+          placeholder='Age' name="age"
+          value={input.age} onChange={handleInputChange}
+        />
+
+        <Select placeholder='Select Gender'
+          name="gender" value={input.gender}
+          onChange={handleInputChange}>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </Select>
+
+        <Input
+          type='text'
+          placeholder='description' name="description"
+          value={input.description}
+          onChange={handleInputChange}
+        />
+        <br />
+        <Button
+
+          bgColor="two" color="white"
           type='submit'
-      >
-        Submit
-      </Button>
+        >
+          Submit
+        </Button>
 
-    {/* </FormControl> */}
+        {/* </FormControl> */}
 
-    </form>
+      </form>
     </Box>
   )
 }
