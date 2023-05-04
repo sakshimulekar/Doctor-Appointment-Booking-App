@@ -9,7 +9,7 @@ const initState={
     errormessage:""
 }
 
-export const reducer=(state=initState,{type,payload}){
+export const reducer=(state=initState,{type,payload})=>{
     switch(type){
         case DOCTOR_REQUEST:{
             return{
