@@ -280,9 +280,8 @@
       "gender": "male",
       "category": "brain"
     }
-  ]
-} 
-
-
+  ],
+  "patients": [
     
-
+  ]
+}
