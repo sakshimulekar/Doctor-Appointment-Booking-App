@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import 'react-calendar-datetime-picker/dist/index.css';
 import {FormControl,FormHelperText,FormErrorMessage,Input, Box, Button} from "@chakra-ui/react";
 import {useDispatch, useSelector} from "react-redux";
-import {Form} from "react-router-dom"
 import { postPatient } from '../../redux/PatientReducer/action';
 
 const initial = {
