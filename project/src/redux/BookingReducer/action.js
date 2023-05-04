@@ -3,5 +3,5 @@ import { DOCTOR_REQUEST } from "./actionType"
 
 export const getDoctor=(dispatch)=>{
     dispatch({type:DOCTOR_REQUEST})
-    axio
+    axios.get('http://localhost:8000/doctor')
 }
