@@ -1,5 +1,6 @@
 import { applyMiddleware, combineReducers, legacy_createStore } from "redux";
 import thunk from "redux-thunk";
+
 import {reducer as authReducer} from "./AuthReducer/reducer";
 import {reducer as bookReducer} from "./BookingReducer/reducer";
 import {reducer as doctorReducer} from "./DoctorReducer/reducer";
