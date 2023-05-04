@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { useDispatch,useSelector} from 'react-redux'
 import {useLocation} from 'react-router-dom'
 import { getDoctor } from '../../redux/BookingReducer/action'
@@ -7,8 +8,8 @@ export const BookingList = () => {
 
     // const location = useLocation()
     const dispatch = useDispatch()
-    const data=useSelector((store)=>store.BookingReducer.doctors)
-    console.log(data)
+    const data=useSelector((store)=>store.bookReducer.doctors)
+    //console.log(data)
    useEffect(()=>{
     dispatch(getDoctor())
    },[])
@@ -17,7 +18,7 @@ export const BookingList = () => {
   return (
     <div>
     {  data.length>0 && data.map((el)=>{
-        return <BookingCard key={el.key} {...el}/>
+        return <BookingCard key={el.id} {...el}/>
     })
     
     
