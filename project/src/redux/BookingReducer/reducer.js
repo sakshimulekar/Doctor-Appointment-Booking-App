@@ -6,7 +6,7 @@ const initState={
     doctors:[],
     isLoading:false,
     isError:false,
-    errormessage:""
+   
 }
 
 export const reducer=(state=initState,{type,payload})=>{
