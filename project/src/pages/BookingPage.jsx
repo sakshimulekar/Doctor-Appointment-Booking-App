@@ -1,7 +1,8 @@
 import React from 'react'
+import { BookingCard } from '../components/Booking/BookingCard'
 
-export const BookingPage = () => {
+export const BookingPage = ({}) => {
   return (
-    <div>BookingPage</div>
+    <div><BookingCard/></div>
   )
 }
