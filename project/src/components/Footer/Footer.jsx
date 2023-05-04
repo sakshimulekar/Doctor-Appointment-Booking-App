@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Image, Text } from "@chakra-ui/react";
 export const Footer = () => {
   return (
     <Box
@@ -11,7 +11,9 @@ export const Footer = () => {
       p={"50px"}
     >
       <Box display={"flex"} w={"80%"} m={"auto"}>
-        <Box w={"220px"}>Logo</Box>
+        <Box w={"220px"}>
+          <Image src="../../assets/logo.jpg" alt="logo" />
+        </Box>
         <Box w={"220px"}>
           <Text as={"b"}>Menu</Text>
           <Text>Home</Text>
