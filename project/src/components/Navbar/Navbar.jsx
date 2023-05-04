@@ -20,7 +20,7 @@ export const Navbar = () => {
         display={"flex"}
         gap={"5"}
         alignItems={"center"}
-        _hover={"textDecoration=underline"}
+        _hover={{ textDecoration:"underline" }}
       >
         <Link to={"/"}>
           <Box>
