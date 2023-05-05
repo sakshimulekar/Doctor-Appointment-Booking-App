@@ -16,9 +16,14 @@ export const Navbar = () => {
       <Box>
         <Image src="../../assets/logo.jpg" alt="logo" />
       </Box>
-      <Box display={"flex"} gap={"5"} alignItems={"center"}>
+      <Box
+        display={"flex"}
+        gap={"5"}
+        alignItems={"center"}
+        _hover={{ textDecoration:"underline" }}
+      >
         <Link to={"/"}>
-          <Box _hover={{ textDecoration: "underline" }}>
+          <Box>
             <Text color={"#61876e"} as={"b"}>
               Home
             </Text>{" "}
@@ -43,6 +48,7 @@ export const Navbar = () => {
             </Text>{" "}
           </Box>
         </Link>
+
         <Link to={"/edit"}>
           <Box>
             <Text color={"#61876e"} as={"b"}>
@@ -50,21 +56,20 @@ export const Navbar = () => {
             </Text>{" "}
           </Box>
         </Link>
+
         <Link to={"/login"}>
           <Box>
             {" "}
-            <Button colorScheme="two" variant="outline" color={"two"}>
+            <Button colorScheme="teal" variant="outline">
               Sign-up
             </Button>
           </Box>
         </Link>
-        <Link to={"/doctorpage"}>
-          <Box>
-            <Button colorScheme="two" variant="outline" color={"two"}>
-              Doctor
-            </Button>
-          </Box>
-        </Link>
+        <Box>
+          <Button colorScheme="teal" variant="outline">
+            Button
+          </Button>
+        </Box>
       </Box>
     </Box>
   );
