@@ -25,33 +25,35 @@ export const Navbar = () => {
           </Box>
         </Link>
         <Link to={"/login"}></Link>
-        <Box>
+        <Box _hover={{ textDecoration: "underline" }}>
           <Text color={"#61876e"} as={"b"}>
             About Us
           </Text>{" "}
         </Box>
         <Link to={"/login"}></Link>
-        <Box>
+        <Box _hover={{ textDecoration: "underline" }}>
           <Text color={"#61876e"} as={"b"}>
             Servies
           </Text>{" "}
         </Box>
         <Link to={"/bookingpage"}>
-          <Box>
+          <Box _hover={{ textDecoration: "underline" }}>
             <Text color={"#61876e"} as={"b"}>
               Appointment
             </Text>{" "}
           </Box>
         </Link>
+
         <Link to={"/edit"}>
-          <Box>
+          <Box _hover={{ textDecoration: "underline" }}>
             <Text color={"#61876e"} as={"b"}>
               Booking
             </Text>{" "}
           </Box>
         </Link>
+
         <Link to={"/login"}>
-          <Box>
+          <Box _hover={{ textDecoration: "underline" }}>
             {" "}
             <Button colorScheme="two" variant="outline" color={"two"}>
               Sign-up
@@ -59,7 +61,7 @@ export const Navbar = () => {
           </Box>
         </Link>
         <Link to={"/doctorpage"}>
-          <Box>
+          <Box _hover={{ textDecoration: "underline" }}>
             <Button colorScheme="two" variant="outline" color={"two"}>
               Doctor
             </Button>

@@ -1,9 +1,10 @@
-import { POST_PATIENT_FAIL, POST_PATIENT_REQ, POST_PATIENT_SUCCESS } from "./actionType"
+import { GET_DOCTOR, GET_DOCTOR_FAIL, GET_DOCTOR_REQ, GET_DOCTOR_SUCCESS, POST_PATIENT_FAIL, POST_PATIENT_REQ, POST_PATIENT_SUCCESS } from "./actionType"
 
 const initial = {
     isLoading : false,
     isError : false,
-    patients : []
+    patients : [],
+   
 }
 
 export const reducer = (state=initial,{type,payload}) => {

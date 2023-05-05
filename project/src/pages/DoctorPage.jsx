@@ -1,11 +1,13 @@
-import { Box } from "@chakra-ui/react";
 import React from "react";
-import { DoctorLogin } from "../components/Doctor's/DoctorLogin";
+import { Box } from "@chakra-ui/react";
+import { DoctorLogin } from "../components/Doctors/DoctorLogin";
+import { DoctorHome } from "./../components/Doctors/DoctorHome";
 
 export const DoctorPage = () => {
   return (
     <Box>
-      <DoctorLogin />
+      {/* <DoctorLogin /> */}
+      <DoctorHome />
     </Box>
   );
 };

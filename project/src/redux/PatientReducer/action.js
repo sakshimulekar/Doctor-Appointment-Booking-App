@@ -1,7 +1,9 @@
-import { POST_PATIENT_FAIL, POST_PATIENT_REQ, POST_PATIENT_SUCCESS } from "./actionType"
+import { GET_DOCTOR, GET_DOCTOR_FAIL, GET_DOCTOR_REQ, GET_DOCTOR_SUCCESS, POST_PATIENT_FAIL, POST_PATIENT_REQ, POST_PATIENT_SUCCESS } from "./actionType"
 import axios from "axios";
 
 const url = "http://localhost:8080/patients";
+
+
 
 export const postPatient = (obj) => (dispatch) => {
     dispatch({type:POST_PATIENT_REQ})
@@ -14,3 +16,4 @@ export const postPatient = (obj) => (dispatch) => {
         return dispatch({type:POST_PATIENT_FAIL})
     })
 }
+
