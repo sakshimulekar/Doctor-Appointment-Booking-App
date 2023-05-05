@@ -1,9 +1,9 @@
 import { DOCTOR_FAILURE, DOCTOR_REQUEST, GET_DOCTOR_SUCCESS } from "./actionType"
 import axios from "axios"
 
-export const getDoctor=()=>(dispatch)=>{
+export const getDoctor=(paramObj)=>(dispatch)=>{
     dispatch({type:DOCTOR_REQUEST})
-    axios.get('http://localhost:8080/doctors')
+    axios.get('http://localhost:8080/doctors',paramObj)
     .then((response)=>{
 
      //console.log(response.data)
