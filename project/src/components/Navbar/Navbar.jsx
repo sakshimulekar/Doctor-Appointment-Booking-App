@@ -16,33 +16,28 @@ export const Navbar = () => {
       <Box>
         <Image src="../../assets/logo.jpg" alt="logo" />
       </Box>
-      <Box
-        display={"flex"}
-        gap={"5"}
-        alignItems={"center"}
-        _hover={{ textDecoration:"underline" }}
-      >
+      <Box display={"flex"} gap={"5"} alignItems={"center"}>
         <Link to={"/"}>
-          <Box>
+          <Box _hover={{ textDecoration: "underline" }}>
             <Text color={"#61876e"} as={"b"}>
               Home
             </Text>{" "}
           </Box>
         </Link>
         <Link to={"/login"}></Link>
-        <Box>
+        <Box _hover={{ textDecoration: "underline" }}>
           <Text color={"#61876e"} as={"b"}>
             About Us
           </Text>{" "}
         </Box>
         <Link to={"/login"}></Link>
-        <Box>
+        <Box _hover={{ textDecoration: "underline" }}>
           <Text color={"#61876e"} as={"b"}>
             Servies
           </Text>{" "}
         </Box>
         <Link to={"/bookingpage"}>
-          <Box>
+          <Box _hover={{ textDecoration: "underline" }}>
             <Text color={"#61876e"} as={"b"}>
               Appointment
             </Text>{" "}
@@ -50,7 +45,7 @@ export const Navbar = () => {
         </Link>
 
         <Link to={"/edit"}>
-          <Box>
+          <Box _hover={{ textDecoration: "underline" }}>
             <Text color={"#61876e"} as={"b"}>
               Booking
             </Text>{" "}
@@ -58,18 +53,20 @@ export const Navbar = () => {
         </Link>
 
         <Link to={"/login"}>
-          <Box>
+          <Box _hover={{ textDecoration: "underline" }}>
             {" "}
-            <Button colorScheme="teal" variant="outline">
+            <Button colorScheme="two" variant="outline" color={"two"}>
               Sign-up
             </Button>
           </Box>
         </Link>
-        <Box>
-          <Button colorScheme="teal" variant="outline">
-            Button
-          </Button>
-        </Box>
+        <Link to={"/doctorpage"}>
+          <Box _hover={{ textDecoration: "underline" }}>
+            <Button colorScheme="two" variant="outline" color={"two"}>
+              Doctor
+            </Button>
+          </Box>
+        </Link>
       </Box>
     </Box>
   );
