@@ -1,4 +1,4 @@
-import { GET_DOCTOR } from "./actionType"
+import { GET_DOCTOR } from "./actionTypes"
 
 const initial = {
     doctorsData:[]
