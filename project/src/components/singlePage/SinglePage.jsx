@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Center, Input, Box, Button, Select } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { postPatient } from '../../redux/PatientReducer/action';
@@ -17,12 +17,19 @@ const initial = {
 
 
 export const SinglePage = () => {
-
+  
   const patient = useSelector(store => store.patients)
+
+
+  const doctorsData = useSelector((store)=>{
+    return store.doctorGetReducer.doctorsData
+  })
+  console.log(doctorsData)
+
   const dispatch = useDispatch();
   const [input, setInput] = useState(initial)
 
-  
+
   const handleInputChange = (e) => {
     setInput((prev) => {
       return { ...prev, [e.target.name]: e.target.value }
@@ -34,9 +41,9 @@ export const SinglePage = () => {
     const data = {
       ...input,
       status: false,
-      doctor: "Dr. Michael Johnson",
-      hospital: "321 Maple St, Anytown, USA",
-      fees: "$200"
+      doctor: doctorsData.name,
+      hospital: doctorsData.location,
+      fees: doctorsData.fees
     }
     dispatch(postPatient(data))
     setInput(initial)
@@ -48,9 +55,9 @@ export const SinglePage = () => {
       <form onSubmit={handleSubmit}>
 
         <h1>Request Appointment with</h1>
-        <h1>Dr.Nardeen</h1>
+        <h1>{doctorsData.name}</h1>
 
-        <Box>KMC Hospital</Box>
+        <Box>{doctorsData.location}</Box>
 
         <Center>Select Date</Center>
         <Input
@@ -91,7 +98,6 @@ export const SinglePage = () => {
         </Select>
 
         <Input
-
           type='text' name="patient_name"
           value={input.patient_name}
           onChange={handleInputChange}
@@ -113,7 +119,6 @@ export const SinglePage = () => {
         />
 
         <Input
-
           type='email' name="email"
           placeholder='Email Id'
           value={input.email} onChange={handleInputChange}
@@ -139,15 +144,9 @@ export const SinglePage = () => {
           onChange={handleInputChange}
         />
         <br />
-        <Button
-
-          bgColor="two" color="white"
-          type='submit'
-        >
+        <Button bgColor="two" color="white" type='submit'>
           Submit
         </Button>
-
-        {/* </FormControl> */}
 
       </form>
     </Box>
