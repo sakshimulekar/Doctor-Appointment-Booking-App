@@ -43,6 +43,13 @@ export const Navbar = () => {
             </Text>{" "}
           </Box>
         </Link>
+        <Link to={"/edit"}>
+          <Box>
+            <Text color={"#61876e"} as={"b"}>
+              Booking
+            </Text>{" "}
+          </Box>
+        </Link>
         <Link to={"/login"}>
           <Box>
             {" "}
