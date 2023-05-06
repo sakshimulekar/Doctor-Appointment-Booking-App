@@ -13,4 +13,4 @@ export const getDoctor=(paramObj)=>(dispatch)=>{
         console.log(error)
         dispatch({type:DOCTOR_FAILURE})
     })
-}
+
