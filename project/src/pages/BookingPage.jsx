@@ -29,7 +29,7 @@ const [isMobile] = useMediaQuery("(max-width: 768px)")
 const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
 const [query, setQuery]=useState("")
-// const [profile,setProfile]=useState(initProfile || "")
+
  const dispatch=useDispatch()
 
  let ref=useRef()
@@ -37,7 +37,7 @@ const [query, setQuery]=useState("")
  const paramObj={
   params:{
     q:query && query,
-    
+
   }
  }
 
