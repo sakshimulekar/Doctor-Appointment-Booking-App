@@ -1,0 +1,130 @@
+import React,{useState} from 'react'
+import { Card,CardBody,CardFooter,Heading,Text,Button,Image,Stack,Avatar, Icon,HStack,Breadcrumb,
+  BreadcrumbItem,BreadcrumbLink,List,ListItem,ListIcon,Textarea,Box
+ } from '@chakra-ui/react'
+import {TimeIcon,CheckCircleIcon,} from "@chakra-ui/icons"
+import { useSelector } from 'react-redux';
+import { Navigate } from 'react-router-dom';
+
+export const DoctorInfo = () => {
+    const doc = useSelector((store)=>{
+        //console.log(store.doctorGetReducer.doctorsData)
+        return store.doctorGetReducer.doctorsData
+    })
+    //console.log(doc)
+    
+  return (
+  <Stack ml={"30px"}>
+
+    <Breadcrumb>
+    <BreadcrumbItem>
+      <BreadcrumbLink href='/' color={"three"}>Home</BreadcrumbLink>
+    </BreadcrumbItem>
+
+    <BreadcrumbItem>
+      <BreadcrumbLink href='/bookingpage' color={"three"}>bookingpage</BreadcrumbLink>
+    </BreadcrumbItem>
+    </Breadcrumb>
+
+    <Card
+    direction={{ base: 'column', sm: 'row' }}
+    overflow='hidden'
+    variant='outline'
+    w="60%"
+    boxShadow='xs'
+    p={"20px"}
+    mb={"50px"}
+    >
+    <Image
+    borderRadius='full'
+    boxSize='200px'
+    objectFit='cover'
+    mt={"20px"}
+    maxW={{ base: '100%', sm: '200px' }}
+    src={doc.image}
+    alt='Caffe Latte'
+    />
+
+    <Stack>
+    <CardBody>
+      <Heading size='md'color={"three"}>{doc.name}</Heading>
+
+      <Text py='1' color={"three"}>{doc.profile}</Text>
+      <Text color={"three"}>Hospital Address : {doc.location}</Text>
+      <Text color={"three"}>Fees : {doc.fees} EGP</Text>
+      <Text color={"three"}>{doc.waiting_time} min</Text>
+    </CardBody>
+
+    <CardFooter>
+      <Button variant='solid' bgColor="two" color="white" >
+        <Navigate to={"/form"}/>
+        Book an Appointment
+      </Button>
+    </CardFooter>
+
+    </Stack>
+    </Card>
+
+    <Stack pt={"30px"} w={"70%"}>
+    <Stack direction={'row'} display="flex" alignItems="center" >
+      <Avatar src='https://bit.ly/broken-link' boxSize={6}/>
+      <Text fontSize={"xl"} as="b" color={"three"}>About Doctor</Text>  
+    </Stack>
+    <Text color={"three"}>{doc.description}</Text>
+    </Stack>
+
+    <Stack direction={'row'} display="flex" alignItems="center" pt={"30px"}>
+      <Icon as={TimeIcon} color={"two"}/>
+      <Text color={"three"}>Available days for Appointment</Text>
+      </Stack>
+      
+      <HStack >
+        <Button variant='outline' color={"three"} >
+            Satureday
+        </Button>
+        <Button variant='outline' color={"three"}>
+            Sunday
+        </Button>
+        <Button variant='outline' color={"three"}>
+            Monday
+        </Button>
+        <Button variant='outline' color={"three"}>
+            Tuesday
+        </Button>
+      </HStack>
+      
+      <Stack direction={'row'} display="flex" alignItems="center" pt={"30px"} pb={"30px"}>
+        <Icon as={CheckCircleIcon} color='green.500'/>
+        <Text color={"three"}>Varified Profile</Text>
+      </Stack>
+      
+      <Textarea placeholder='Appointment Notes' w={"60%"}/>
+      
+      <Text color={"three"}>Doctor review</Text>
+      <Textarea w={"60%"} placeholder='Put your review here' />
+      
+      <List spacing={3} pt={"30px"}>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color='green.500' />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit
+      </ListItem>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color='green.500' />
+          Assumenda, quia temporibus eveniet a libero incidunt suscipit
+        </ListItem>
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color='green.500' />
+            Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+          </ListItem>
+  
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color='green.500' />
+            Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+          </ListItem>
+        </List>
+      
+    </Stack>
+  )
+}
+
+

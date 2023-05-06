@@ -1,7 +1,13 @@
-import React from 'react'
+import React from 'react';
+import {Box, Text,Center} from "@chakra-ui/react";
 
 export const CheckAppo = () => {
   return (
-    <div>CheckAppo</div>
+    <Box>
+      <Center>
+      <Text>Search by Appointment History</Text>
+      <Text>Aoopintment Number/Name</Text>
+      </Center>
+    </Box>
   )
 }
