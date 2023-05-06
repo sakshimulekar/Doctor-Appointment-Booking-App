@@ -12,7 +12,7 @@ export const Footer = () => {
     >
       <Box display={"flex"} w={"80%"} m={"auto"}>
         <Box w={"220px"}>
-          <Image src="../../assets/logo.jpg" alt="logo" />
+          <Image src={require("../../assets/logo-without-bg.png")} alt="logo" w={"80%"}/>
         </Box>
         <Box w={"220px"}>
           <Text as={"b"}>Menu</Text>

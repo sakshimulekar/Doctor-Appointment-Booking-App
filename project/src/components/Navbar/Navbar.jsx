@@ -13,8 +13,8 @@ export const Navbar = () => {
       top={"0"}
       backgroundColor={"#fafaf1"}
     >
-      <Box>
-        <Image src="../../assets/logo.jpg" alt="logo" />
+      <Box bgColor={"one"}>
+        <Image src={require("../../assets/logo-without-bg.png")} w={"100px"} alt="logo" />
       </Box>
       <Box display={"flex"} gap={"5"} alignItems={"center"}>
         <Link to={"/"}>
