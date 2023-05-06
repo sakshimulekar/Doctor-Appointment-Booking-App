@@ -5,6 +5,7 @@ import {LoginPage} from "./LoginPage";
 import {DoctorPage} from "./DoctorPage";
 import {BookingPage} from "./BookingPage";
 import {AppointmentPage} from "./AppointmentPage";
+import { DoctorInfo } from '../components/singlePage/DoctorInfo';
 import { SinglePage } from '../components/singlePage/SinglePage';
 
 export const Mainroutes = () => {
@@ -16,7 +17,8 @@ export const Mainroutes = () => {
           <Route path='/doctorpage' element={<DoctorPage/>}/>
           <Route path='/bookingpage' element={<BookingPage/>}/>
           <Route path='/appointment' element={<AppointmentPage/>}/>
-          <Route path="/edit" element={<SinglePage/>}/>
+          <Route path='/form' element={<SinglePage/>}/>
+          <Route path="/edit" element={<DoctorInfo/>}/>
           <Route path='*' element={<h1>404 page not found</h1>}/>
       </Routes>
     
