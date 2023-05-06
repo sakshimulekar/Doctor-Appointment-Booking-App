@@ -11,10 +11,10 @@ export const BookingPage = ({}) => {
 
 const [searchparams,setSearchparams]=useSearchParams()  
 
-const initProfile=searchparams.getAll('profile')
+//const initProfile=searchparams.getAll('profile')
 
 const [query, setQuery]=useState("")
-const [profile,setProfile]=useState(initProfile || "")
+//const [profile,setProfile]=useState(initProfile || "")
  const dispatch=useDispatch()
 
  let ref=useRef()
@@ -22,7 +22,7 @@ const [profile,setProfile]=useState(initProfile || "")
  const paramObj={
   params:{
     q:query && query,
-    profile,
+   
   }
  }
 
@@ -35,20 +35,20 @@ const [profile,setProfile]=useState(initProfile || "")
     dispatch(getDoctor(paramObj))
   },800)
   setSearchparams(paramObj)
- },[query,profile])
+ },[query])
 
 //
-const handelProfile=(e)=>{
-  const {value}=e.target
- let newProfile=[...profile]
- if(newProfile.includes(value)){
-  newProfile=newProfile.filter((el)=>el!==value)
- }
- else{
-  newProfile.push(value)
- }
- setProfile(newProfile)
-}
+// const handelProfile=(e)=>{
+//   const {value}=e.target
+//  let newProfile=[...profile]
+//  if(newProfile.includes(value)){
+//   newProfile=newProfile.filter((el)=>el!==value)
+//  }
+//  else{
+//   newProfile.push(value)
+//  }
+//  setProfile(newProfile)
+// }
 
 
 
@@ -59,7 +59,7 @@ const handelProfile=(e)=>{
     <Box display={"flex"} justifyContent='space-evenly' width={"97%"} m='5' p='5'
     boxShadow='dark-lg'  rounded='md' >
 
-         <Select maxW='22%'placeholder='Choose Speciality' onChange={handelProfile}>
+         <Select maxW='22%'placeholder='Choose Speciality'>
          <option value='dentist'>Dentist</option>
          <option value='cardiologist'>Cardiologist</option>
          <option value='gynaecologist'>Gynaecologist</option>

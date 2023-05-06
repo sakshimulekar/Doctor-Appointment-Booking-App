@@ -14,7 +14,7 @@ let Obj={
   params:{
     gender:searchparams.getAll('gender'),
     category:searchparams.getAll('category'),
-    profile:searchparams.getAll('profile'),
+    //profile:searchparams.getAll('profile'),
     _sort:searchparams.get('order') && 'fees',
     _order:searchparams.get('order'),
   }
