@@ -14,7 +14,7 @@ const [searchparams,setSearchparams]=useSearchParams()
 //const initProfile=searchparams.getAll('profile')
 
 const [query, setQuery]=useState("")
-//const [profile,setProfile]=useState(initProfile || "")
+
  const dispatch=useDispatch()
 
  let ref=useRef()
@@ -22,7 +22,7 @@ const [query, setQuery]=useState("")
  const paramObj={
   params:{
     q:query && query,
-   
+
   }
  }
 
