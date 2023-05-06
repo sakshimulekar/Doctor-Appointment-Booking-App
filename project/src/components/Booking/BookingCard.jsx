@@ -35,12 +35,9 @@ export const BookingCard = ({id,name,profile,image,location,fees,waiting_time,st
     <h3>Fees:{fees}</h3>
     <h3>Waiting Time :{waiting_time}</h3>
     <h3>Hotline:{'91'+Date.now()%1000}</h3>
-   <Box display={"flex"} justifyContent='space-between'>
+   <Box display={"flex"} justifyContent='space-between' >
   <Button isDisabled={!status} bgColor={status ? "#61876e " :"#a4a480"} 
-  
-  
-  
-  onClick={() => dispatch(getDoctorData({
+     onClick={() => dispatch(getDoctorData({
     id,
     name,
     profile,
