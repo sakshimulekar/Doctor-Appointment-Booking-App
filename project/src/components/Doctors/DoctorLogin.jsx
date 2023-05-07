@@ -9,8 +9,8 @@ export const DoctorLogin = () => {
     setUsername("");
   };
   return (
-    <Box bg={"one"}>
-      <Box w="30%" m={"auto"}>
+    <Box bg={"one"} h={"80vh"} pt={"100px"}>
+      <Box w="30%" m={"auto "}>
         <FormControl>
           <FormLabel color="two">Email</FormLabel>
           <Input
