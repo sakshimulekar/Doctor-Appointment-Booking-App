@@ -24,7 +24,7 @@ import { useSearchParams } from 'react-router-dom'
 export const BookingPage = ({}) => {
 
 const [searchparams,setSearchparams]=useSearchParams()  
-const [isMobile] = useMediaQuery("(max-width: 768px)") 
+const [isMobile] = useMediaQuery("(max-width: 480px)") 
 //const initProfile=searchparams.getAll('profile')
 const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
@@ -70,7 +70,7 @@ const [query, setQuery]=useState("")
 
 
   return (
-    <div>
+    <div style={{backgroundColor:'#fafaf1'}}>
 
     {isMobile ? 
     ( <>
@@ -113,7 +113,7 @@ const [query, setQuery]=useState("")
       />
       </Box>
      </Box>
-    <Box width="100%"  border="1px solid gray"><BookingList/></Box> 
+    <Box width="100%"  p='5'><BookingList/></Box> 
     
     
   
@@ -123,7 +123,7 @@ const [query, setQuery]=useState("")
     :
    (<div> 
     <Box display={"flex"} justifyContent='space-evenly' width={"97%"} m='5' p='5'
-    boxShadow='dark-lg'  rounded='md' >
+    boxShadow='md'  rounded='md' >
 
          <Select maxW='22%'placeholder='Choose Speciality'>
          <option value='dentist'>Dentist</option>
@@ -153,9 +153,9 @@ onChange={(e)=>setQuery(e.target.value)}
 </Box>
 </Box>
 
-    <Box display="flex" justifyContent={'space-evenly'}>
-   <Box width="30%" border="1px solid gray"><Sidebar/></Box>
-    <Box width="65%" border="1px solid gray"><BookingList/></Box>
+    <Box display="flex" justifyContent={'space-evenly'} p='5'>
+   <Box width="30%"   boxShadow='md' m='2'><Sidebar/></Box>
+    <Box width="65%" ><BookingList/></Box>
     </Box>
     </div>
    )}

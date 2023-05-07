@@ -3,7 +3,7 @@ import axios from "axios"
 
 export const getDoctor=(paramObj,page)=>(dispatch)=>{
     dispatch({type:DOCTOR_REQUEST})
-    axios.get(`http://localhost:8080/doctors?_limit=5&_page=${page}`,paramObj)
+    axios.get(`http://localhost:8080/doctors?_limit=4&_page=${page}`,paramObj)
     .then((response)=>{
 
      //console.log(response.data)

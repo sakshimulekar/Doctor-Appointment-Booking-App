@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box,Button, ButtonGroup,Image } from '@chakra-ui/react'
+import { Box,Button, ButtonGroup,Image,useToast } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { getDoctorData } from '../../redux/DoctorGet/action'
 import { useDispatch } from 'react-redux'
@@ -18,25 +18,29 @@ import { useDispatch } from 'react-redux'
 // "gender": "male",
 // "category": "brain"
 export const BookingCard = ({id,name,profile,image,location,fees,waiting_time,status,rating,description}) => {
- const handel=()=>{
+ const handelCall=()=>{
     
     
  }
- const dispatch=useDispatch()
+ const dispatch=useDispatch();
+ const toast = useToast()
   return (
-    <div className='card'>
-      <Box display="flex"  alignItems="center" boxShadow='dark-lg' m='5' p='15' rounded='md' bg='white'>
-     <Box width="30%"  rounded='md'>
-    <Image borderRadius="12px" className='img' src={image} alt={name} />
+    <div className='card' style={{}}>
+      <Box display="flex"  alignItems="center" boxShadow='md' m='5' p='15' rounded='md' >
+     <Box width="30%"  rounded='md' ml="5">
+    <Image w="190px"  h="170px" borderRadius="50%" className='img' src={image} alt={name} />
     </Box> 
     <Box width="60%" pl="10"  > 
-    <h3>{name}</h3>
-    <h3>{profile}</h3>
-    <h3>Fees:{fees}</h3>
-    <h3>Waiting Time :{waiting_time}</h3>
-    <h3>Hotline:{'91'+Date.now()%1000}</h3>
+    <h3> {name} </h3>
+    <h3> {profile} </h3>
+    <h3 style={{color:"gold"}}>★★★★★</h3>
+    <h3>Fees: {fees}</h3>
+    <h3>Waiting Time : {waiting_time}</h3>
+    <h3>Hotline: {'91'+Date.now()%1000}</h3>
    <Box display={"flex"} justifyContent='space-between' >
-  <Button isDisabled={!status} bgColor={status ? "#61876e " :"#a4a480"} 
+   <Link to={'/edit'}><Button isDisabled={!status} 
+  bgColor={status ? "#61876e " :"#a4a480"}
+  color={"#FAFAF1"} 
      onClick={() => dispatch(getDoctorData({
     id,
     name,
@@ -48,8 +52,27 @@ export const BookingCard = ({id,name,profile,image,location,fees,waiting_time,st
     location,
     rating,
     description}))}
-    >Book An Appointment</Button> 
-  <Button color='#61876e'>Call</Button>
+
+    >Book An Appointment</Button> </Link>
+    {/* //Provide the Link for Edit page */}
+  <Button color='#61876e' 
+   onClick={() =>{ status ?
+    toast({
+      title: `Calling ${name}`,
+      description: "Wait a minute! Your call is being Placed",
+      status: 'success',
+      duration: 4000,
+      isClosable: true,
+       position: 'top'
+    }) : toast({
+      title: `${name} Not Available`,
+      description: "Doctor not available",
+      status: 'error',
+      duration: 2000,
+      isClosable: true,
+       position: 'top'
+    })
+  }}>Call</Button>
   </Box>
   </Box> 
   </Box>
