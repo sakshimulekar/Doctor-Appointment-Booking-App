@@ -48,7 +48,7 @@ export const Navbar = () => {
           </Box>
         </Link>
 
-        <Link to={"/edit"}>
+        <Link to={"/checkAppoint"}>
           <Box _hover={{ textDecoration: "underline" }}>
             <Text color={"#61876e"} as={"b"}>
               Booking

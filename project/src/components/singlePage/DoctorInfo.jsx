@@ -4,15 +4,20 @@ import { Card,CardBody,CardFooter,Heading,Text,Button,Image,Stack,Avatar, Icon,H
  } from '@chakra-ui/react'
 import {TimeIcon,CheckCircleIcon,} from "@chakra-ui/icons"
 import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import {useNavigate} from "react-router-dom"
 
 export const DoctorInfo = () => {
-    const doc = useSelector((store)=>{
-        //console.log(store.doctorGetReducer.doctorsData)
+
+    const doctorsData = useSelector((store)=>{
+        console.log(store.doctorGetReducer)
         return store.doctorGetReducer.doctorsData
     })
-    //console.log(doc)
-    
+    console.log(doctorsData)
+    const navigate=useNavigate();
+
+    const handle = () => {
+      navigate("/form")
+    }
   return (
   <Stack ml={"30px"}>
 
@@ -41,23 +46,22 @@ export const DoctorInfo = () => {
     objectFit='cover'
     mt={"20px"}
     maxW={{ base: '100%', sm: '200px' }}
-    src={doc.image}
+    src={doctorsData.image}
     alt='Caffe Latte'
     />
 
     <Stack>
     <CardBody>
-      <Heading size='md'color={"three"}>{doc.name}</Heading>
+      <Heading size='md'color={"three"}>{doctorsData.name}</Heading>
 
-      <Text py='1' color={"three"}>{doc.profile}</Text>
-      <Text color={"three"}>Hospital Address : {doc.location}</Text>
-      <Text color={"three"}>Fees : {doc.fees} EGP</Text>
-      <Text color={"three"}>{doc.waiting_time} min</Text>
+      <Text py='1' color={"three"}>{doctorsData.profile}</Text>
+      <Text color={"three"}>Hospital Address : {doctorsData.location}</Text>
+      <Text color={"three"}>Fees : {doctorsData.fees} EGP</Text>
+      <Text color={"three"}>{doctorsData.waiting_time} min</Text>
     </CardBody>
 
     <CardFooter>
-      <Button variant='solid' bgColor="two" color="white" >
-        <Navigate to={"/form"}/>
+      <Button variant='solid' bgColor="two" color="white" onClick={handle}>
         Book an Appointment
       </Button>
     </CardFooter>
@@ -70,7 +74,7 @@ export const DoctorInfo = () => {
       <Avatar src='https://bit.ly/broken-link' boxSize={6}/>
       <Text fontSize={"xl"} as="b" color={"three"}>About Doctor</Text>  
     </Stack>
-    <Text color={"three"}>{doc.description}</Text>
+    <Text color={"three"}>{doctorsData.description}</Text>
     </Stack>
 
     <Stack direction={'row'} display="flex" alignItems="center" pt={"30px"}>

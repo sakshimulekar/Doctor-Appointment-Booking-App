@@ -322,7 +322,7 @@
       "gender": "female",
       "description": "PCOD",
       "time": "1.00 PM",
-      "status": false,
+      "status": true,
       "doctor": "Dr. Sarah Lee",
       "hospital": "789 Oak St, Anytown, USA",
       "fees": "$250",
