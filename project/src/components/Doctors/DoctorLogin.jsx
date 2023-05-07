@@ -1,31 +1,39 @@
-import React from "react";
-import {
-  Box,
-  FormLabel,
-  Input,
-  FormControl,
-  Button,
-  Text,
-} from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Box, FormLabel, Input, FormControl, Button } from "@chakra-ui/react";
 export const DoctorLogin = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const handleSubmit = () => {
+    console.log(username, password);
+    setPassword("");
+    setUsername("");
+  };
   return (
-    <Box>
-      <Box w="30%">
+    <Box bg={"one"} h={"80vh"} pt={"100px"}>
+      <Box w="30%" m={"auto "}>
         <FormControl>
           <FormLabel color="two">Email</FormLabel>
-          <Input type="email" borderColor="two" />
+          <Input
+            type="email"
+            borderColor="two"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </FormControl>
+        <FormControl>
           <FormLabel color="two">Password</FormLabel>
-          <Input type="Password" borderColor="two" />
+          <Input
+            type="Password"
+            borderColor="two"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <FormLabel></FormLabel>
-          <Button bgColor="two" color="white" w="100%">
+          <Button bgColor="two" color="white" w="100%" onClick={handleSubmit}>
             Login
           </Button>
         </FormControl>
       </Box>
-      <Text color="two" as={"b"}>
-        DR. Amr Khaled
-      </Text>
-      <Text color="three">Constutant in Dentistry Cosmetic Dentistry</Text>
     </Box>
   );
 };

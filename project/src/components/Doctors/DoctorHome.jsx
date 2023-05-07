@@ -14,11 +14,14 @@ import {
   TableContainer,
   Button,
   Switch,
+  Select,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 
 export const DoctorHome = () => {
   const doc = "Dr. Nardeen Adel";
+
+  //Toast
   const toast = useToast();
   function hello() {
     toast({
@@ -63,7 +66,11 @@ export const DoctorHome = () => {
                     <Td>40</Td>
                     <Td>M</Td>
                     <Td>
-                      <Switch size="md" colorScheme="green" />
+                      <Select placeholder="Select option">
+                        <option value="false">Pending</option>
+                        <option value="ture">Approve</option>
+                        <option value="false">Rejected</option>
+                      </Select>
                     </Td>
                   </Tr>
                 </Tbody>

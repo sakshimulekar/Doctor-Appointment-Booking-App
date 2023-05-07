@@ -328,6 +328,19 @@
       "fees": "$250",
       "profile": "gynaecologist",
       "id": 2
+    },
+    {
+      "date": "2023-05-08",
+      "patient_name": "sohel",
+      "Address": "Dhar road",
+      "mobile": "0942 027 8216",
+      "email": "mymailsohel@gmail.com",
+      "age": "26",
+      "gender": "male",
+      "description": "fewer",
+      "time": "10.00 AM",
+      "status": false,
+      "id": 3
     }
   ]
 }
