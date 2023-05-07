@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { FormLabel,Text,Center, Input, Box, Button, Select,Image,Divider,FormControl,Alert,AlertIcon} from "@chakra-ui/react";
-import { useDispatch, useSelector } from "react-redux";
+import { FormLabel,Text,Center, Input, Box, Button, Select,Image,Divider,FormControl,Breadcrumb,
+BreadcrumbLink,BreadcrumbItem,List,ListIcon,ListItem} from "@chakra-ui/react";
+import {CheckCircleIcon,} from "@chakra-ui/icons"
 import { postPatient } from '../../redux/PatientReducer/action';
 import { useToast } from '@chakra-ui/react'
+import { useSelector,useDispatch } from 'react-redux';
 const initial = {
   date: "",
   patient_name: "",
@@ -17,10 +19,13 @@ const initial = {
 
 export const SinglePage = () => {
   
-  let doctorsData = useSelector((store)=>{
-    return store.doctorGetReducer.doctorsData
+  const doctorsData= useSelector((store)=>{
+    console.log(store.doctorGetReducer.doctorsData)
+  return store.doctorGetReducer.doctorsData
   })
-  //console.log(doctorsData)
+
+  console.log(doctorsData)
+
   const toast = useToast()
   const dispatch = useDispatch();
   const [input, setInput] = useState(initial)
@@ -49,6 +54,23 @@ export const SinglePage = () => {
 
   return (
     <Box  blur='2px' >
+      <Breadcrumb>
+        <BreadcrumbItem>
+          <BreadcrumbLink href='/' color={"three"}>Home</BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem>
+          <BreadcrumbLink href='/bookingpage' color={"three"}>bookingpage</BreadcrumbLink>
+        </BreadcrumbItem>
+
+        <BreadcrumbItem>
+          <BreadcrumbLink href='/edit' color={"three"}>{doctorsData.name}</BreadcrumbLink>
+        </BreadcrumbItem>
+
+      </Breadcrumb>
+
+
+
       <Center>
         <Box boxSize={"50%"} boxShadow='2xl' p='6' rounded='md'>
         <Center>
@@ -182,6 +204,25 @@ export const SinglePage = () => {
         </form>
         </Box>
       </Center>
+      <List spacing={3} pt={"30px"}>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color='green.500' />
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit
+      </ListItem>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color='green.500' />
+          Assumenda, quia temporibus eveniet a libero incidunt suscipit
+        </ListItem>
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color='green.500' />
+            Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+          </ListItem>
+  
+        <ListItem>
+          <ListIcon as={CheckCircleIcon} color='green.500' />
+            Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+          </ListItem>
+        </List>
     </Box>
   )
 }
