@@ -6,7 +6,7 @@ import { DoctorHome } from "./../components/Doctors/DoctorHome";
 export const DoctorPage = () => {
   return (
     <Box>
-      {/* <DoctorLogin /> */}
+      <DoctorLogin />
       <DoctorHome />
     </Box>
   );

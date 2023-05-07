@@ -9,8 +9,8 @@ import {
 } from "@chakra-ui/react";
 export const DoctorLogin = () => {
   return (
-    <Box>
-      <Box w="30%">
+    <Box bg={"one"}>
+      <Box w="30%" m={"auto"}>
         <FormControl>
           <FormLabel color="two">Email</FormLabel>
           <Input type="email" borderColor="two" />
@@ -22,10 +22,6 @@ export const DoctorLogin = () => {
           </Button>
         </FormControl>
       </Box>
-      <Text color="two" as={"b"}>
-        DR. Amr Khaled
-      </Text>
-      <Text color="three">Constutant in Dentistry Cosmetic Dentistry</Text>
     </Box>
   );
 };
