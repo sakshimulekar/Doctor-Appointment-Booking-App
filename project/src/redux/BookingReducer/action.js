@@ -1,5 +1,9 @@
-import { DOCTOR_FAILURE, DOCTOR_REQUEST, GET_DOCTOR_SUCCESS } from "./actionType"
-import axios from "axios"
+import {
+  DOCTOR_FAILURE,
+  DOCTOR_REQUEST,
+  GET_DOCTOR_SUCCESS,
+} from "./actionType";
+import axios from "axios";
 
 export const getDoctor=(paramObj,page)=>(dispatch)=>{
     dispatch({type:DOCTOR_REQUEST})
