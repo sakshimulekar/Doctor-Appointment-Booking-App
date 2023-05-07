@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Center, Input, Box, Button, Select } from "@chakra-ui/react";
+import { FormLabel,Text,Center, Input, Box, Button, Select,Image,Divider,FormControl,Alert,AlertIcon} from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { postPatient } from '../../redux/PatientReducer/action';
-
+import { useToast } from '@chakra-ui/react'
 const initial = {
   date: "",
   patient_name: "",
@@ -15,20 +15,15 @@ const initial = {
   time: ""
 }
 
-
 export const SinglePage = () => {
   
-  const patient = useSelector(store => store.patients)
-
-
-  const doctorsData = useSelector((store)=>{
+  let doctorsData = useSelector((store)=>{
     return store.doctorGetReducer.doctorsData
   })
-  console.log(doctorsData)
-
+  //console.log(doctorsData)
+  const toast = useToast()
   const dispatch = useDispatch();
   const [input, setInput] = useState(initial)
-
 
   const handleInputChange = (e) => {
     setInput((prev) => {
@@ -43,113 +38,150 @@ export const SinglePage = () => {
       status: false,
       doctor: doctorsData.name,
       hospital: doctorsData.location,
-      fees: doctorsData.fees
+      fees: doctorsData.fees,
+      profile:doctorsData.profile
     }
     dispatch(postPatient(data))
     setInput(initial)
+    doctorsData = []
+    console.log(doctorsData)
   }
 
   return (
-    <Box w={"80%"} axis='both' border='1px' borderColor='black'>
+    <Box  blur='2px' >
+      <Center>
+        <Box boxSize={"50%"} boxShadow='2xl' p='6' rounded='md'>
+        <Center>
+          <Image src={doctorsData.image} alt='doctor image'borderRadius={"full"} w={"100px"} h={"100px"} />
+        </Center>
 
-      <form onSubmit={handleSubmit}>
+        <Center>
+          <Text as={"b"}>Request Appointment with</Text>
+        </Center>
 
-        <h1>Request Appointment with</h1>
-        <h1>{doctorsData.name}</h1>
+        <Center>
+          <Text color={"two"} as={"b"} >{doctorsData.name}</Text>
+        </Center>
 
-        <Box>{doctorsData.location}</Box>
+        <Center>
+          <Text color={"two"}  pb={"20px"}>{doctorsData.location}</Text>
+        </Center>
 
-        <Center>Select Date</Center>
-        <Input
-          type='date' name='date'
-          value={input.date}
-          onChange={handleInputChange}
-          placeholder={"select appoiontment date"}
-        />
+        <Divider orientation='horizontal' mb={"20px"}/>
 
-        <Select placeholder='Select time'
-          name="time" value={input.time}
-          onChange={handleInputChange}>
-          <option value="9.00 AM">9.00 AM</option>
-          <option value="9.30 AM">9.30 AM</option>
-          <option value="10.00 AM">10.00 AM</option>
-          <option value="10.30 AM">10.30 AM</option>
-          <option value="11.00 AM">11.00 AM</option>
-          <option value="11.30 AM">11.30 AM</option>
-          <option value="12.00 PM">12.00 PM</option>
-          <option value="1.30 PM">1.30 PM</option>
-          <option value="1.00 PM">1.00 PM</option>
-          <option value="1.30 PM">1.30 PM</option>
-          <option value="2.00 PM">2.00 PM</option>
-          <option value="2.30 PM">2.30 PM</option>
-          <option value="3.00 PM">3.00 PM</option>
-          <option value="3.30 PM">3.30 PM</option>
-          <option value="4.00 PM">4.00 PM</option>
-          <option value="4.30 PM">4.30 PM</option>
-          <option value="5.00 PM">5.00 PM</option>
-          <option value="5.00 PM">5.30 PM</option>
-          <option value="6.00 PM">6.00 PM</option>
-          <option value="6.30 PM">6.30 PM</option>
-          <option value="7.00 PM">7.00 PM</option>
-          <option value="7.30 PM">7.30 PM</option>
-          <option value="8.00 PM">8.00 PM</option>
-          <option value="8.30 PM">8.30 PM</option>
+        <form  onSubmit={handleSubmit}  >
+          <FormControl isRequired>
+          <Box direction={'row'} display="flex" alignItems="center" gap={"30px"}>
+          <Box>
+            <FormLabel color={"two"}>Select Date</FormLabel>
 
-        </Select>
+            <Input variant='outline' 
+            type='date' name='date' 
+            value={input.date} color={"two"}
+            onChange={handleInputChange}/>
+          </Box>
+          <Box>
+            <FormLabel color={"two"}>Select time</FormLabel>
+            <Select placeholder='Select time'
+              name="time" value={input.time} color={"two"}
+              onChange={handleInputChange}>
+            <option value="9.00 AM">9.00 AM</option>
+            <option value="9.30 AM">9.30 AM</option>
+            <option value="10.00 AM">10.00 AM</option>
+            <option value="10.30 AM">10.30 AM</option>
+            <option value="11.00 AM">11.00 AM</option>
+            <option value="11.30 AM">11.30 AM</option>
+            <option value="12.00 PM">12.00 PM</option>
+            <option value="1.30 PM">1.30 PM</option>
+            <option value="1.00 PM">1.00 PM</option>
+            <option value="1.30 PM">1.30 PM</option>
+            <option value="2.00 PM">2.00 PM</option>
+            <option value="2.30 PM">2.30 PM</option>
+            <option value="3.00 PM">3.00 PM</option>
+            <option value="3.30 PM">3.30 PM</option>
+            <option value="4.00 PM">4.00 PM</option>
+            <option value="4.30 PM">4.30 PM</option>
+            <option value="5.00 PM">5.00 PM</option>
+            <option value="5.00 PM">5.30 PM</option>
+            <option value="6.00 PM">6.00 PM</option>
+            <option value="6.30 PM">6.30 PM</option>
+            <option value="7.00 PM">7.00 PM</option>
+            <option value="7.30 PM">7.30 PM</option>
+            <option value="8.00 PM">8.00 PM</option>
+            <option value="8.30 PM">8.30 PM</option>
+            </Select>
+          </Box>
+          </Box>
 
-        <Input
-          type='text' name="patient_name"
-          value={input.patient_name}
-          onChange={handleInputChange}
-          placeholder={"Patient Name"}
-        />
+          <FormLabel color={"two"}>Patient Name</FormLabel>
+            <Input color={"two"}
+              type='text' name="patient_name"
+              value={input.patient_name} placeholder='patient name'
+              onChange={handleInputChange}
+            />
+            <FormLabel color={"two"}>Address</FormLabel>
+            <Input color={"two"}
+              type='text' name="Address"
+              placeholder='Address'
+              value={input.Address}
+              onChange={handleInputChange}
+            />
+            <FormLabel color={"two"}>Mobile No.</FormLabel>
+            <Input color={"two"}
+              type='text'
+              placeholder='Mobile No.'
+              value={input.mobile} name='mobile'
+              onChange={handleInputChange}
+            />
 
-        <Input
-          type='text' name="Address"
-          placeholder='Address'
-          value={input.Address}
-          onChange={handleInputChange}
-        />
+            <FormLabel color={"two"}>Email Id</FormLabel>
+            <Input color={"two"}
+              type='email' name="email"
+              placeholder='Email Id'
+              value={input.email} onChange={handleInputChange}
+            />
 
-        <Input
-          type='texy'
-          placeholder='Mobile No.'
-          value={input.mobile} name='mobile'
-          onChange={handleInputChange}
-        />
+            <FormLabel color={"two"}>Age</FormLabel>
+            <Input color={"two"}
+              type='text'placeholder='Age' name="age"
+              value={input.age} onChange={handleInputChange}
+            />
 
-        <Input
-          type='email' name="email"
-          placeholder='Email Id'
-          value={input.email} onChange={handleInputChange}
-        />
-
-        <Input
-          type='text'
-          placeholder='Age' name="age"
-          value={input.age} onChange={handleInputChange}
-        />
-
-        <Select placeholder='Select Gender'
-          name="gender" value={input.gender}
-          onChange={handleInputChange}>
-          <option value="male">Male</option>
-          <option value="female">Female</option>
-        </Select>
-
-        <Input
-          type='text'
-          placeholder='description' name="description"
-          value={input.description}
-          onChange={handleInputChange}
-        />
-        <br />
-        <Button bgColor="two" color="white" type='submit'>
-          Submit
-        </Button>
-
-
-      </form>
+            <FormLabel color={"two"}>Select Gender</FormLabel>
+            <Select placeholder='Select Gender' color={"two"}
+              name="gender" value={input.gender}
+              onChange={handleInputChange}>
+            <option value="male" color={"two"}>Male</option>
+            <option value="female" color={"two"}>Female</option>
+            </Select>
+        
+            <FormLabel color={"two"}>description</FormLabel>
+            <Input
+              type='text' color={"two"}
+              placeholder='description' name="description"
+              value={input.description}
+              onChange={handleInputChange}
+            />
+            <Center>
+            <Button m={"10px"} w={"350px"} bgColor="three" color="white" type='submit'
+              onClick={() =>
+                toast({
+                title: 'Application submitted!',
+                description: "Your application has been received. We will review your application and respond within the next 48 hours.",
+                status: 'success',
+                duration: 5000,
+                isClosable: true,
+                position:"top",
+                })
+              }
+            >
+              Submit
+            </Button>
+            </Center>
+            </FormControl>
+        </form>
+        </Box>
+      </Center>
     </Box>
   )
 }

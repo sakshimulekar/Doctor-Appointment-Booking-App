@@ -5,16 +5,17 @@ import {
 } from "./actionType";
 import axios from "axios";
 
-export const getDoctor = (paramObj) => (dispatch) => {
-  dispatch({ type: DOCTOR_REQUEST });
-  axios
-    .get("http://localhost:8080/doctors", paramObj)
-    .then((response) => {
-      //console.log(response.data)
-      dispatch({ type: GET_DOCTOR_SUCCESS, payload: response.data });
+export const getDoctor=(paramObj,page)=>(dispatch)=>{
+    dispatch({type:DOCTOR_REQUEST})
+    axios.get(`http://localhost:8080/doctors?_limit=5&_page=${page}`,paramObj)
+    .then((response)=>{
+
+     //console.log(response.data)
+     dispatch({type:GET_DOCTOR_SUCCESS,payload:response.data})   
     })
-    .catch((error) => {
-      console.log(error);
-      dispatch({ type: DOCTOR_FAILURE });
-    });
-};
+    .catch((error)=>{
+        console.log(error)
+        dispatch({type:DOCTOR_FAILURE})
+    })
+}
+
