@@ -4,7 +4,7 @@ import { useDispatch,useSelector} from 'react-redux'
 import {useLocation, useSearchParams} from 'react-router-dom'
 import { getDoctor } from '../../redux/BookingReducer/action'
 import { BookingCard } from './BookingCard'
-import { Button,Box } from '@chakra-ui/react'
+import { Button,Box, HStack } from '@chakra-ui/react'
 export const BookingList = () => {
 
 
@@ -51,11 +51,14 @@ console.log(Obj)
     
     
     }
-    <Box width="50%" margin="auto">
-    <Button isDisabled={page === 1} onClick={() => handlepage(-1)}>Prev</Button>
-    <Button>{page}</Button>
-    <Button isDisabled={page === 4} onClick={() => handlepage(1)}>Next</Button>
+    <Box  display="flex" justifyContent="flex-end" >
+    <HStack >
+    <Button isDisabled={page === 1}  onClick={() => handlepage(-1)} color={"#fafaf1"} bgColor="#365349">Prev</Button>
+    <Button bgColor="#365349" color={"#fafaf1"}>{page}</Button>
+    <Button isDisabled={page === 5} onClick={() => handlepage(1)} bgColor="#365349" color={"#fafaf1"}>Next</Button>
+    </HStack>
     </Box>
+    
     </div>
   )
 }
