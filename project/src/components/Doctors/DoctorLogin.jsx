@@ -1,10 +1,30 @@
 import React, { useState } from "react";
 import { Box, FormLabel, Input, FormControl, Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
 export const DoctorLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const loginInfo = [
+    { id: 1, username: "robertjohnson@gmail.com", password: "12345" },
+    { id: 2, username: "sarahlee@gmail.com", password: "12345" },
+    { id: 3, username: "emilywatson@gmail.com", password: "12345" },
+    { id: 4, username: "janesmith@gmail.com", password: "12345" },
+  ];
+
+  function validateLogin(username, password) {
+    const user = loginInfo.find(
+      (user) => user.username === username && user.password === password
+    );
+    return user !== undefined;
+  }
+
   const handleSubmit = () => {
     console.log(username, password);
+    const isValid = validateLogin(username, password);
+    if (isValid) {
+      navigate("/doctorpage");
+    }
     setPassword("");
     setUsername("");
   };
