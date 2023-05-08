@@ -19,6 +19,7 @@ import {
 import React, { useEffect } from "react";
 
 export const DoctorHome = () => {
+  
   const doc = "Dr. Nardeen Adel";
 
   //Toast
