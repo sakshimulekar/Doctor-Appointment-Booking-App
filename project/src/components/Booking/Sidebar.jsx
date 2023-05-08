@@ -69,21 +69,21 @@ setGender(newGender)
 
 
   return (
-    <div>
-     <Box>
+    <div >
+     <Box p='15' m='5'>
         <Box>
         Filters
         </Box>
         <Box >
-        <Text fontSize="xl">Filter by Speciality</Text>
-        <VStack >
+        <Text fontSize="xl" >Filter By Speciality</Text>
+        <VStack alignItems={"left"}>
           <Box>
         <input type='checkbox' 
         value={'heart'} 
         onChange={handelSpeciality}
         checked={category.includes('heart')}     
         />
-        <label>Heart</label>
+        <label> Heart </label>
         </Box>
         <Box>
         <input type='checkbox' 
@@ -91,7 +91,7 @@ setGender(newGender)
         onChange={handelSpeciality}
         checked={category.includes('brain')} 
         />
-        <label>Brain</label>
+        <label> Brain </label>
         </Box>
         <Box>
         <input type='checkbox' 
@@ -99,7 +99,7 @@ setGender(newGender)
         onChange={handelSpeciality}
         checked={category.includes('dentist')} 
         />
-        <label>Oral</label>
+        <label> Oral </label>
         </Box>
         <Box>
         <input type='checkbox' 
@@ -107,28 +107,28 @@ setGender(newGender)
         onChange={handelSpeciality}
         checked={category.includes('female disorder')} 
         />
-        <label>Female Disorder</label>
+        <label> Female Disorder </label>
         </Box>
         <Box>
         <input type='checkbox' 
         value={'bone'} 
         onChange={handelSpeciality}
         checked={category.includes('bone')}/>
-        <label>Bone</label>
+        <label> Bones </label>
         </Box>
         </VStack>
           </Box>
           
         <Box>
         <Text fontSize="xl">Filter By Gender</Text>
-        <VStack alignItems='center'>
+        <VStack alignItems='left'>
         <Box>
         <input type='checkbox' 
         value={'male'} 
         onChange={handelGender}
         checked={gender.includes('male')}
         />
-        <label>Male</label>
+        <label> Male </label>
         </Box>
         <Box>
         <input type='checkbox' 
@@ -136,7 +136,7 @@ setGender(newGender)
         onChange={handelGender}
         checked={gender.includes('female')}
         />
-        <label>Female</label>
+        <label> Female </label>
         </Box>
        </VStack>
           </Box>
@@ -150,7 +150,7 @@ setGender(newGender)
           name='order'
           defaultChecked={sort==='asc'}
           />
-          <label>Low to High</label>
+          <label> Low to High </label>
           </div>
           <div>
           <input type="radio"
@@ -158,7 +158,7 @@ setGender(newGender)
           name='order'
           defaultChecked={sort==='desc'}
           />
-          <label>High to Low</label>
+          <label> High to Low </label>
           </div>
         </div>
 
