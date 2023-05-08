@@ -10,13 +10,13 @@ const initGender=searchparams.getAll('gender')
 const initSpeciality=searchparams.getAll('category')
 
 const initSort=searchparams.getAll('order')
-console.log(initSort)
+//console.log(initSort)
 const [gender,setGender]=useState(initGender || [])
 
 const [category,setCategory]=useState(initSpeciality || [])
 
 const [sort,setSort]=useState(initSort || '')
-console.log(sort)
+//console.log(sort)
 
 useEffect(()=>{
   let params={

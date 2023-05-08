@@ -10,6 +10,7 @@ import { SinglePage } from '../components/singlePage/SinglePage';
 import { CheckAppo } from '../components/Checkappointment/CheckAppo';
 import { ViewHistory } from '../components/Checkappointment/ViewHistory';
 import PaymentPage from "../components/Checkappointment/PaymentPage"
+import { PrivateRoute } from '../components/privateRoute';
 export const Mainroutes = () => {
   return (
     
@@ -21,7 +22,7 @@ export const Mainroutes = () => {
           <Route path='/appointment' element={<AppointmentPage/>}/>
           <Route path='/form' element={<SinglePage/>}/>
           <Route path='/edit' element={<DoctorInfo/>}/>
-          <Route path='/checkAppoint' element={<CheckAppo/>}/>
+          <Route path='/checkAppoint' element={<PrivateRoute><CheckAppo/></PrivateRoute>}/>
           <Route path='/view' element={<ViewHistory/>}/>
           <Route path='/payathospital' element={<PaymentPage/>}/>
           <Route path='*' element={<h1>404 page not found</h1>}/>

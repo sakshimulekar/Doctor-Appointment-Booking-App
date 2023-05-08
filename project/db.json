@@ -342,5 +342,14 @@
       "status": false,
       "id": 3
     }
+  ],
+  "login": [
+   
+    {
+      "email": "shakshi@gmail.com",
+      "password": "12345",
+      "username": "Shakshi",
+      "id": 1
+    }
   ]
 }

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, } from 'react'
+import { useSearchParams, useHistory } from 'react-router-dom'
 import { BookingCard } from '../components/Booking/BookingCard'
 import { BookingList } from '../components/Booking/Bookinglist'
 import { Sidebar } from '../components/Booking/Sidebar'
@@ -21,7 +22,7 @@ import { Box,
 } from '@chakra-ui/react'
 import { useDispatch } from 'react-redux'
 import { getDoctor } from '../redux/BookingReducer/action'
-import { useSearchParams } from 'react-router-dom'
+
 
 
 export const BookingPage = ({}) => {
@@ -33,6 +34,7 @@ const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
 const [query, setQuery]=useState("")
 
+
  const dispatch=useDispatch()
 
  let ref=useRef()
@@ -40,7 +42,7 @@ const [query, setQuery]=useState("")
  const paramObj={
   params:{
     q:query && query,
-
+    
   }
  }
 
@@ -53,19 +55,16 @@ const [query, setQuery]=useState("")
     dispatch(getDoctor(paramObj))
   },800)
   setSearchparams(paramObj)
- },[query])
+ },[query,])
 
-//
-// const handelProfile=(e)=>{
-//   const {value}=e.target
-//  let newProfile=[...profile]
-//  if(newProfile.includes(value)){
-//   newProfile=newProfile.filter((el)=>el!==value)
-//  }
-//  else{
-//   newProfile.push(value)
-//  }
-//  setProfile(newProfile)
+
+//  const handelProfile=(e)=>{
+//   const { value } = e.target;
+//   const newProfile = initProfile.includes(value)
+//     ? initProfile.filter((el) => el !== value)
+//     : [...initProfile, value];
+
+ 
 // }
 
 
