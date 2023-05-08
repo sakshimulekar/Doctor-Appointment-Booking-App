@@ -28,7 +28,7 @@ export const BookingCard = ({id,name,profile,image,location,fees,waiting_time,st
     <div className='card' style={{}}>
       <Box display="flex"  alignItems="center" boxShadow='md' m='5' p='15' rounded='md' >
      <Box width="30%"  rounded='md' ml="5">
-    <Image w="190px"  h="170px" borderRadius="50%" className='img' src={image} alt={name} />
+    <Image w="190px"  h="190px" borderRadius="50%" className='img' src={image} alt={name} />
     </Box> 
     <Box width="60%" pl="10"  > 
     <Text fontSize='xl' p='2px'> {name}</Text>

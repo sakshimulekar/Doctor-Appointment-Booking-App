@@ -10,7 +10,7 @@ import { reducer as doctorGetReducer } from "./DoctorGet/reducer";
 import {reducer as adminReducer} from "./AdminReducer/reducer"
 
 const rootReducer = combineReducers({
- // authReducer,
+  authReducer,
   bookReducer,
   doctorReducer,
   patientReducer,
