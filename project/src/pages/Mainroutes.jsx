@@ -10,6 +10,9 @@ import { SinglePage } from '../components/singlePage/SinglePage';
 import { CheckAppo } from '../components/Checkappointment/CheckAppo';
 import { ViewHistory } from '../components/Checkappointment/ViewHistory';
 import PaymentPage from "../components/Checkappointment/PaymentPage"
+import { AdminPage } from './AdminPage';
+import { Dashboard } from '../components/Admin/Dashboard';
+
 export const Mainroutes = () => {
   return (
     
@@ -24,6 +27,8 @@ export const Mainroutes = () => {
           <Route path='/checkAppoint' element={<CheckAppo/>}/>
           <Route path='/view' element={<ViewHistory/>}/>
           <Route path='/payathospital' element={<PaymentPage/>}/>
+          <Route path='/admin' element={<AdminPage/>}/>
+          <Route path="/adminDashboard" element={<Dashboard/>}/>
           <Route path='*' element={<h1>404 page not found</h1>}/>
       </Routes>
     
