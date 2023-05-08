@@ -1,9 +1,9 @@
 import React from 'react'
-import { Box,Button, ButtonGroup,Image,useToast } from '@chakra-ui/react'
+import { Box,Button, ButtonGroup,Image,useToast,Text } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { getDoctorData } from '../../redux/DoctorGet/action'
 import { useDispatch } from 'react-redux'
-
+import { PhoneIcon,TimeIcon,CopyIcon } from '@chakra-ui/icons'
 
 // "id": 2,
 // "name": "Dr. John Doe",
@@ -31,12 +31,13 @@ export const BookingCard = ({id,name,profile,image,location,fees,waiting_time,st
     <Image w="190px"  h="170px" borderRadius="50%" className='img' src={image} alt={name} />
     </Box> 
     <Box width="60%" pl="10"  > 
-    <h3> {name} </h3>
-    <h3> {profile} </h3>
-    <h3 style={{color:"gold"}}>★★★★★</h3>
-    <h3>Fees: {fees}</h3>
-    <h3>Waiting Time : {waiting_time}</h3>
-    <h3>Hotline: {'91'+Date.now()%1000}</h3>
+    <Text fontSize='xl' p='2px'> {name}</Text>
+    <Text fontSize='xl' p='2px'> {profile} </Text>
+    <Text  fontSize='2xl'color="gold" >★★★★★</Text>
+    <Text fontSize='lg'>Overall Rating From {Date.now()%1000} Visitors</Text>
+    <Text fontSize='xl' p='2px'><CopyIcon/> Fees : {fees}</Text>
+    <Text fontSize='xl' p='2px'><TimeIcon/> Waiting Time : {waiting_time} minutes</Text>
+    <Text fontSize='xl' p='2px'><PhoneIcon/> Hotline : {'91'+Date.now()%1000}</Text>
    <Box display={"flex"} justifyContent='space-between' >
    <Link to={'/edit'}><Button isDisabled={!status} 
   bgColor={status ? "#61876e " :"#a4a480"}

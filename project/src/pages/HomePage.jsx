@@ -123,6 +123,22 @@ export const HomePage = () => {
       <Text fontSize='3xl' color={"#365349"} m='2'>Say About Us</Text>
     </Box>
     </Box>
+    <Box w='100%' h='150px' bgColor="#365349" zIndex='0' >
+      <Box w='60%'h='150px'  color='white' zIndex='1' textAlign={'center'} m='auto'  boxShadow="md" rounded="md">
+      <Text  noOfLines={[1, 2, 3]} color={"#fafaf1"} fontSize='xl' textAlign={'center'}>
+   The quick brown fox jumps over the lazy dog" 
+   is an English-language pangrama
+  sentence.The quick brown fox jumps over the lazy dog" 
+   is an English-language pangrama
+  sentence.The quick brown fox jumps over the lazy dog" 
+   is an English-language pangrama
+  sentence.  </Text>
+  <Box display={'flex'} justifyContent={'space-between'}  >
+    <Text fontSize={'2xl'} color={"#fafaf1"}>Sarah Jones</Text>
+    <Text fontSize={'xl'}  color={'gold'}>★★★★★</Text>
+  </Box>
+  </Box>
+  </Box>
     <Box textAlign={'center'} p='10'>
       <Text fontSize='4xl' color={"#365349"} m='2'>Get In Touch</Text>
       <Text fontSize='3xl' color={"#365349"} m='2'>Get Your Valuable Feedback</Text>

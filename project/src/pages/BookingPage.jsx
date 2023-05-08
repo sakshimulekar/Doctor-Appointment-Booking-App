@@ -3,6 +3,8 @@ import { BookingCard } from '../components/Booking/BookingCard'
 import { BookingList } from '../components/Booking/Bookinglist'
 import { Sidebar } from '../components/Booking/Sidebar'
 import { Box, 
+  Image,
+  Text,
   Select,
   Input,
   Button, 
@@ -14,7 +16,8 @@ import { Box,
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  useDisclosure,        
+  useDisclosure,
+  HStack,        
 } from '@chakra-ui/react'
 import { useDispatch } from 'react-redux'
 import { getDoctor } from '../redux/BookingReducer/action'
@@ -24,7 +27,7 @@ import { useSearchParams } from 'react-router-dom'
 export const BookingPage = ({}) => {
 
 const [searchparams,setSearchparams]=useSearchParams()  
-const [isMobile] = useMediaQuery("(max-width: 480px)") 
+const [isMobile] = useMediaQuery("(max-width: 780px)") 
 //const initProfile=searchparams.getAll('profile')
 const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = React.useRef()
@@ -76,8 +79,8 @@ const [query, setQuery]=useState("")
     ( <>
      <Box display={"flex"} justifyContent="space-between" p="3">
     <Box>
-    <Button ref={btnRef} colorScheme='teal' onClick={onOpen}>
-       Apply Filters
+    <Button ref={btnRef} bgColor='#365349' color='#fafaf1' onClick={onOpen}>
+     Open Filter
       </Button>
       <Drawer
         isOpen={isOpen}
@@ -99,7 +102,7 @@ const [query, setQuery]=useState("")
             <Button variant='outline' mr={3} onClick={onClose}>
               Cancel
             </Button>
-            <Button colorScheme='blue' onClick={onClose}>Save</Button>
+            <Button bgColor='#365349' color='#fafaf1' onClick={onClose}>Save</Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
@@ -122,8 +125,24 @@ const [query, setQuery]=useState("")
     
     :
    (<div> 
+    <Box>
+      <Box display="flex" justifyContent={'space-between'} m='auto' w='40%' >
+        <HStack>
+        <Image w='25px' src={require("../assets/charity.png")}/>
+        <Text fontSize="2xl" color={'#365349'}>Primary Care</Text>
+        </HStack>
+        <HStack>
+        <Image w='25px' src={require("../assets/protection.png")}/>
+        <Text fontSize="2xl" color={'#365349'}>Peadiatric</Text>
+        </HStack>
+        <HStack>
+        <Image w='25px' src={require("../assets/doctor.png")}/>
+        <Text fontSize="2xl" color={'#365349'}>General</Text>
+        </HStack>
+      </Box>
     <Box display={"flex"} justifyContent='space-evenly' width={"97%"} m='5' p='5'
     boxShadow='md'  rounded='md' >
+     
 
          <Select maxW='22%'placeholder='Choose Speciality'>
          <option value='dentist'>Dentist</option>
@@ -138,7 +157,7 @@ const [query, setQuery]=useState("")
       type="date"
      />
 
-<Select maxW='22%' placeholder='My Insurance'>
+<Select maxW='22%' placeholder='My Insurance' >
   <option value='maxbufa'>MaxBupa</option>
   <option value='icici-insurance'>ICICI-Insurance</option>
   <option value='oralcare'>OralCare</option>
@@ -157,7 +176,11 @@ onChange={(e)=>setQuery(e.target.value)}
    <Box width="30%"   boxShadow='md' m='2'><Sidebar/></Box>
     <Box width="65%" ><BookingList/></Box>
     </Box>
+   </Box>
+   
+
     </div>
+   
    )}
 
     </div>
