@@ -165,7 +165,7 @@
       "gender": "female",
       "description": "high blood precure",
       "time": "1.30 PM",
-      "status": false,
+      "status": true,
       "doctor": "Dr. Jane Smith",
       "hospital": "123 Main St, Anytown, USA",
       "fees": "$300",
@@ -189,7 +189,6 @@
       "category": "heart",
       "email": "janesmith@gmail.com",
       "password": "12345"
-
     }
   ],
   "login": [
@@ -200,12 +199,16 @@
       "id": 1
     },
     {
-
       "email": "shakshi@gmail.com",
       "password": "12345",
       "username": "shakshi ",
-
       "id": 2
+    },
+    {
+      "email": "shakshi@gmail.com",
+      "password": "12345",
+      "username": "",
+      "id": 3
     }
   ]
 }

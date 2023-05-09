@@ -27,11 +27,10 @@ export const DoctorLogin = () => {
 
     return user;
   }
- 
 
   function validateLogin(username, password) {
     const user = loginInfo.find(
-      (user) => user.username === username && user.password === password
+      (user) => user.email === username && user.password === password
     );
     return user !== undefined;
   }
