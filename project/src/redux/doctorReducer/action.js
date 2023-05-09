@@ -3,8 +3,8 @@ import {
   GET_DOCTORS_PENDING_SH,
   GET_DOCTORS_SUCCESS_SH,
   POST_DOCTOR_SUCCESS_SH,
-  UPDATE_STATUS,
 } from "./actionTypes";
+
 import axios from "axios";
 
 export const getDoctorsFn = () => (dispatch) => {
@@ -46,5 +46,3 @@ export const getLoginDoctorFn = () => (dispatch) => {
       console.log(err);
     });
 };
-
-
