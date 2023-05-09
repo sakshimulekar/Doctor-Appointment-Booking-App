@@ -27,7 +27,7 @@ import { getPatient, updateStatusFn } from "../../redux/PatientReducer/action";
 import PatientRow from "./PatientRow";
 
 export const DoctorHome = () => {
-  //const [status, setStatus] = useState(false);
+  const [change, setChange] = useState(false);
   const logindoc = useSelector((state) => state.doctorReducer.Doctors);
   const patients = useSelector((state) => state.patientReducer.patients);
 
@@ -38,7 +38,7 @@ export const DoctorHome = () => {
     hello();
     dispatch(getLoginDoctorFn());
     dispatch(getPatient());
-  }, []);
+  }, [change]);
 
   const doc = logindoc[0]?.name || "Doctor Name";
   console.log("doctor", doc);
@@ -57,7 +57,9 @@ export const DoctorHome = () => {
 
   const handleAprove = (id, status) => {
     console.log("status", status);
-    dispatch(updateStatusFn(id, status));
+    dispatch(updateStatusFn(id, status)).then(() => {
+      setChange((p) => !p);
+    });
   };
   const handleReject = () => {};
 

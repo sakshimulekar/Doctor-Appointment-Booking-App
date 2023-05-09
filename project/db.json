@@ -307,7 +307,7 @@
       "gender": "male",
       "description": "severe heart pain",
       "time": "1.00 PM",
-      "status": false,
+      "status": true,
       "doctor": "Dr. James Lee",
       "hospital": "555 Pine St, Anytown, USA",
       "fees": "$350",
@@ -368,7 +368,7 @@
       "mobile": "64359435830",
       "email": "eve.holt@reqres.in",
       "age": "24",
-      "gender": "male",
+      "gender": "female",
       "description": "high blood precure",
       "time": "1.30 PM",
       "status": false,
@@ -398,6 +398,9 @@
     },
     {
       "id": 2
+    },
+    {
+      "id": 3
     }
   ]
 }
