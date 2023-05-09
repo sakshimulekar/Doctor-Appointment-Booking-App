@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FormLabel,Text,Center, Input, Box, Button, Select,Image,Divider,FormControl,Breadcrumb,
-BreadcrumbLink,BreadcrumbItem,List,ListIcon,ListItem} from "@chakra-ui/react";
+BreadcrumbLink,BreadcrumbItem,List,ListIcon,ListItem,SimpleGrid} from "@chakra-ui/react";
 import {CheckCircleIcon,} from "@chakra-ui/icons"
 import { postPatient } from '../../redux/PatientReducer/action';
 import { useToast } from '@chakra-ui/react'
@@ -71,9 +71,44 @@ export const SinglePage = () => {
       </Breadcrumb>
 
 
+      <Box w={"100%"}  display={"flex"} justifyContent={"space-around"}>
+      {/* <Center> */}
+       
+        <Box w={"40%"} mt={"50px"}>
+        
+        <SimpleGrid columns={1} spacingX='40px' spacingY='20px'  mt={"20px"}>
+          <Box  height='30vh' borderRadius={10} bgColor={"three"} boxShadow={"2xl"}>
+            <Text m={"30px"} fontSize={20} color={"white"}  >
+             A doctor appointment app is a software application 
+             that is especially meant to help patients manage
+              and schedule appointments with the doctors or 
+              plan a video call or opt for a real-time chat.
+            </Text>
+          </Box>
+          <Box  height='30vh' borderRadius={10} bgColor={"three"} boxShadow={"2xl"}>
+            <Text m={"30px"} fontSize={20} color={"white"}  >
+            An increasing number of patients are now looking for 
+            healthcare services that offer digital competencies 
+            like online communication, remote monitoring, 
+            e-prescriptions, virtual appointments, etc. 
+            These apps are crucial for any patient while 
+            choosing a healthcare service.
+            </Text>
+          </Box>
+          <Box  height='30vh' borderRadius={10} bgColor={"three"}  boxShadow={"2xl"}>
+            <Text m={"30px"} fontSize={20} color={"white"}  >
+            It offers a great deal of flexibility, convenience, 
+            and transparency for both doctors and patients. 
+            There is less wastage of time, effective planning, 
+            and best results for any appointment. More so, 
+            during the pandemic, it has been a blessing in disguise.
+            </Text>
+          </Box>
+        </SimpleGrid>
+        </Box>
 
-      <Center>
-        <Box boxSize={"50%"} boxShadow='2xl' p='6' rounded='md'>
+
+        <Box  boxShadow='2xl'  rounded='md' p={"30px"} w={"50%"}>
         <Center>
           <Image src={doctorsData.image} alt='doctor image'borderRadius={"full"} w={"100px"} h={"100px"} />
         </Center>
@@ -92,7 +127,7 @@ export const SinglePage = () => {
 
         <Divider orientation='horizontal' mb={"20px"}/>
 
-        <form  onSubmit={handleSubmit}  >
+        <form  onSubmit={handleSubmit} m={"20px"} >
           <FormControl isRequired>
           <Box direction={'row'} display="flex" alignItems="center" gap={"30px"}>
           <Box>
@@ -204,8 +239,10 @@ export const SinglePage = () => {
             </FormControl>
         </form>
         </Box>
-      </Center>
-      <List spacing={3} pt={"30px"}>
+      {/* </Center> */}
+      </Box>
+      <Center>
+      <List spacing={3} pt={"30px"}  w={"90%"} mb={"20px"} pb={"20px"} pl={"20px"} boxShadow={"xl"}>
       <ListItem>
         <ListIcon as={CheckCircleIcon} color='green.500' />
           Lorem ipsum dolor sit amet, consectetur adipisicing elit
@@ -224,6 +261,7 @@ export const SinglePage = () => {
             Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
           </ListItem>
         </List>
+        </Center>
     </Box>
   )
 }

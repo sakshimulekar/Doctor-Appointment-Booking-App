@@ -1,4 +1,4 @@
-import { Box, Button, Input } from '@chakra-ui/react'
+import { Box, Button, Heading, Input ,FormLabel} from '@chakra-ui/react'
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
@@ -33,13 +33,21 @@ const handelLogin=()=>{
 
 
   return (
-    <div auth={auth} error={error}>
-      <Box w='40%' m='auto'p='20'>
-      <Input type='text' palceholder="USERNAME"  value={username} onChange={(e)=>setUsername(e.target.value)} m='3'/>
-      <Input type='email' value={email} placeholder='email' onChange={(e)=>setEmail(e.target.value)} m='3'/>
-      <Input type='password' value={password} placeholder='password' onChange={(e)=>setPassword(e.target.value)} m='3'/>
-      <Button w='100%' m='3' onClick={handelLogin} bgColor='#365349' color='#fafaf1'>Login</Button>
+    <div auth={auth} error={error} style={{backgroundColor:"#fafaf1"}}>
+      <Box p='10'>
+      <Box  w='40%'  m='auto' boxShadow={'md'} rounded='md'>
+      <Heading mt='10' textAlign={'center'} color='two'> User Login </Heading>
+      <Box w='100%' m='auto'p='20'>
+      <FormLabel color="two">UserName :</FormLabel>
+      <Input type='text' placeholder="UserName"  value={username} onChange={(e)=>setUsername(e.target.value)} m='1'/>
+      <FormLabel color="two">Email :</FormLabel>
+      <Input type='email' value={email} placeholder='email' onChange={(e)=>setEmail(e.target.value)} m='1'/>
+      <FormLabel color="two">Password :</FormLabel>
+      <Input type='password' value={password} placeholder='password' onChange={(e)=>setPassword(e.target.value)} m='1'/>
+      <Button w='100%' m='2' onClick={handelLogin} bgColor='#365349' color='#fafaf1'>Login</Button>
       </Box>
-    </div>
-  )
+      </Box>
+      </Box>
+    </div>
+  )
 }

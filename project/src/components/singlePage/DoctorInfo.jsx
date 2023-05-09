@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Card,CardBody,CardFooter,Heading,Text,Button,Image,Stack,Avatar, Icon,HStack,Breadcrumb,
-  BreadcrumbItem,BreadcrumbLink,List,ListItem,ListIcon,Textarea,Box
+  BreadcrumbItem,BreadcrumbLink,List,ListItem,ListIcon,Textarea,Box,Center
  } from '@chakra-ui/react'
 import {TimeIcon,CheckCircleIcon,} from "@chakra-ui/icons"
 import { useSelector } from 'react-redux';
@@ -19,7 +19,7 @@ export const DoctorInfo = () => {
       navigate("/form")
     }
   return (
-  <Stack ml={"30px"}>
+  <Box mt={"10px"} bg={"one"}>
 
     <Breadcrumb>
     <BreadcrumbItem>
@@ -30,15 +30,19 @@ export const DoctorInfo = () => {
       <BreadcrumbLink href='/bookingpage' color={"three"}>bookingpage</BreadcrumbLink>
     </BreadcrumbItem>
     </Breadcrumb>
-
+    <Center>
+    <Box  w={"90%"} pb={"30px"}>
     <Card
     direction={{ base: 'column', sm: 'row' }}
     overflow='hidden'
     variant='outline'
-    w="60%"
+    w="50%"
     boxShadow='xs'
+    //border={"1px"}
     p={"20px"}
     mb={"50px"}
+    mr={"20px"}
+    mt={"20px"}
     >
     <Image
     borderRadius='full'
@@ -102,10 +106,10 @@ export const DoctorInfo = () => {
         <Text color={"three"}>Varified Profile</Text>
       </Stack>
       
-      <Textarea placeholder='Appointment Notes' w={"60%"}/>
+      <Textarea placeholder='Appointment Notes' w={"80%"}  h={"20vh"}/>
       
       <Text color={"three"}>Doctor review</Text>
-      <Textarea w={"60%"} placeholder='Put your review here' />
+      <Textarea w={"80%"} h={"20vh"}placeholder='Put your review here' />
       
       <List spacing={3} pt={"30px"}>
       <ListItem>
@@ -126,8 +130,9 @@ export const DoctorInfo = () => {
             Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
           </ListItem>
         </List>
-      
-    </Stack>
+        </Box>
+        </Center>
+    </Box>
   )
 }
 

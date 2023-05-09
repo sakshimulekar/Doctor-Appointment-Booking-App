@@ -117,7 +117,7 @@
       "gender": "female",
       "description": "PCOD",
       "time": "1.00 PM",
-      "status": true,
+      "status": false,
       "doctor": "Dr. Sarah Lee",
       "image": "https://thumbs.dreamstime.com/b/smiling-female-doctor-holding-medical-records-lab-coat-her-office-clipboard-looking-camera-56673035.jpg",
       "hospital": "789 Oak St, Anytown, USA",
@@ -148,7 +148,7 @@
       "gender": "male",
       "description": "main bimar hoon",
       "time": "11.30 AM",
-      "status": false,
+      "status": true,
       "doctor": "Dr. Jane Smith",
       "hospital": "123 Main St, Anytown, USA",
       "fees": "$300",
@@ -209,6 +209,30 @@
       "password": "12345",
       "username": "",
       "id": 3
+    },
+    {
+      "email": "shakshi@gmail.com",
+      "password": "12345",
+      "username": "",
+      "id": 4
+    },
+    {
+      "email": "shakshi@gmail.com",
+      "password": "12345",
+      "username": "",
+      "id": 5
+    },
+    {
+      "email": "shakshi@gmail.com",
+      "password": "12345",
+      "username": "",
+      "id": 6
+    },
+    {
+      "email": "shakshi@gmail.com",
+      "password": "12345",
+      "username": "",
+      "id": 7
     }
   ]
 }
