@@ -99,7 +99,7 @@
       "gender": "male",
       "description": "severe heart pain",
       "time": "1.00 PM",
-      "status": false,
+      "status": true,
       "doctor": "Dr. James Lee",
       "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZG9jdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
       "hospital": "555 Pine St, Anytown, USA",
@@ -162,7 +162,7 @@
       "mobile": "64359435830",
       "email": "eve.holt@reqres.in",
       "age": "24",
-      "gender": "male",
+      "gender": "female",
       "description": "high blood precure",
       "time": "1.30 PM",
       "status": false,
@@ -189,6 +189,7 @@
       "category": "heart",
       "email": "janesmith@gmail.com",
       "password": "12345"
+
     }
   ],
   "login": [
@@ -199,9 +200,11 @@
       "id": 1
     },
     {
+
       "email": "shakshi@gmail.com",
       "password": "12345",
       "username": "shakshi ",
+
       "id": 2
     }
   ]

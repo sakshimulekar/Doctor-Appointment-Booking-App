@@ -39,26 +39,10 @@ export const getPatient = () => (dispatch) => {
 
 export const updateStatusFn = (id, status) => (dispatch) => {
   dispatch({ type: GET_PATIENT_REQ });
-  console.log("-id", id);
-  let data;
-  let mydata;
-  axios
-    .get(`http://localhost:8080/patients/${id}`)
-    .then((res) => {
-      console.log(res.data);
-      data = res.data.status;
-      mydata = !data;
-      console.log("data-=>", mydata);
-      dispatch({ type: UPDATE_STATUS, payload: res.data });
-    })
-    .catch((err) => {
-      console.log(err);
-    });
 
   return axios
-    .patch(`http://localhost:8080/patients/${id}`, mydata)
+    .patch(`http://localhost:8080/patients/${id}`, { status: !status })
     .then((res) => {
-      console.log("king", res.data);
       dispatch({ type: UPDATE_STATUS, payload: res.data });
     });
 };

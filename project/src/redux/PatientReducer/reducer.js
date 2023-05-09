@@ -34,7 +34,7 @@ export const reducer = (state = initial, { type, payload }) => {
     case GET_PATIENT_FAIL:
       return { ...state, isError: true, isLoading: false };
     case UPDATE_STATUS:
-      return { ...state, isLoading: false, patients: payload };
+      return { ...state, isLoading: false };
     default:
       return state;
   }
