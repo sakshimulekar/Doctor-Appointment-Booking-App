@@ -12,7 +12,9 @@
       "location": "123 Main St, Anytown, USA",
       "status": true,
       "gender": "female",
-      "category": "heart"
+      "category": "heart",
+      "email": "janesmith@gmail.com",
+      "password": "12345"
     },
     {
       "id": 2,
@@ -343,6 +345,61 @@
       "time": "10.00 AM",
       "status": false,
       "id": 3
+    },
+    {
+      "date": "2023-05-10",
+      "patient_name": "Dilip",
+      "Address": "mumbai",
+      "mobile": "2394839545",
+      "email": "eve.holt@reqres.in",
+      "age": "26",
+      "gender": "male",
+      "description": "main bimar hoon",
+      "time": "11.30 AM",
+      "status": false,
+      "doctor": "Dr. Jane Smith",
+      "hospital": "123 Main St, Anytown, USA",
+      "fees": "$300",
+      "profile": "cardiologist",
+      "id": 4
+    },
+    {
+      "date": "2023-05-11",
+      "patient_name": "sakhi",
+      "Address": "nagpur",
+      "mobile": "64359435830",
+      "email": "eve.holt@reqres.in",
+      "age": "24",
+      "gender": "male",
+      "description": "high blood precure",
+      "time": "1.30 PM",
+      "status": false,
+      "doctor": "Dr. Jane Smith",
+      "hospital": "123 Main St, Anytown, USA",
+      "fees": "$300",
+      "profile": "cardiologist",
+      "id": 5
+    }
+  ],
+  "LogedInDoctor": [
+    {
+      "id": 1,
+      "name": "Dr. Jane Smith",
+      "image": "https://t3.ftcdn.net/jpg/01/30/45/54/360_F_130455409_fTuinPO1LXECv5hlk9VBREnL6yowYUo3.jpg",
+      "profile": "cardiologist",
+      "description": "Dr. Jane Smith is a cardiologist with over 10 years of experience. She is passionate about helping patients manage heart disease and improve their heart health.",
+      "waiting_time": 20,
+      "rating": 4.8,
+      "fees": "$300",
+      "location": "123 Main St, Anytown, USA",
+      "status": true,
+      "gender": "female",
+      "category": "heart",
+      "email": "janesmith@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": 2
     }
   ],
   "login": [
