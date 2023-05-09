@@ -46,7 +46,7 @@ export const HomePage = () => {
         <Text fontSize="2xl" color={'#365349'}>Peadiatric</Text>
         </HStack>
         <HStack>
-        <Image w='25px' src={require("../assets/doctor.png")}/>
+        <Image w='25px' src={require("../assets/doctor.png")}   />
         <Text fontSize="2xl" color={'#365349'}>General</Text>
         </HStack>
         </HStack>
