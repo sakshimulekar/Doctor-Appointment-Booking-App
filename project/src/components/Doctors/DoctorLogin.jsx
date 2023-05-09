@@ -36,8 +36,9 @@ export const DoctorLogin = () => {
     console.log(username, password);
     const isValid = validateLogin(username, password);
     const user = validateDoctor(username, password);
+
     dispatch(postLoginDoctorFn(user));
-    console.log("dv", validateDoctor(username, password));
+
     if (isValid) {
       navigate("/doctorpage");
     }

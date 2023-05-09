@@ -48,7 +48,7 @@ export const SinglePage = () => {
     }
     dispatch(postPatient(data))
     setInput(initial)
-    doctorsData = []
+
     console.log(doctorsData)
   }
 

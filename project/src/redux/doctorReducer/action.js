@@ -3,6 +3,7 @@ import {
   GET_DOCTORS_PENDING_SH,
   GET_DOCTORS_SUCCESS_SH,
   POST_DOCTOR_SUCCESS_SH,
+  UPDATE_STATUS,
 } from "./actionTypes";
 import axios from "axios";
 
@@ -33,3 +34,17 @@ export const postLoginDoctorFn = (user) => (dispatch) => {
       dispatch({ type: GET_DOCTORS_FAILURE_SH });
     });
 };
+
+export const getLoginDoctorFn = () => (dispatch) => {
+  dispatch({ type: GET_DOCTORS_PENDING_SH });
+  axios
+    .get(`http://localhost:8080/LogedInDoctor`)
+    .then((res) => {
+      dispatch({ type: GET_DOCTORS_SUCCESS_SH, payload: res.data });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+
