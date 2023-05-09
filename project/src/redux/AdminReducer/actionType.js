@@ -1,3 +1,6 @@
 export const GET_DOCTOR_REQ = "GET_DOCTOR_REQ";
 export const GET_DOCTOR_SUCC = "GET_DOCTOR_SUCC";
 export const GET_DOCTOR_FAIL = "GET_DOCTOR_FAIL";
+export const EDIT_DOCTOR_SUCC = "EDIT_DOCTOR_SUCC";
+export const DEL_DOCTOR_SUCC = "DEL_DOCTOR_SUCC"
+export const ADD_DOCTOR_SUCC = "ADD_DOCTOR_SUCC"

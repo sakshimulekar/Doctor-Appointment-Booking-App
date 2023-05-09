@@ -46,17 +46,17 @@ export const ViewHistory = () => {
             
             <Divider />
             
-
+            <Center>
             <CardFooter>
                 <ButtonGroup gap={"30px"}>
+                    
                 <Button variant='solid' backgroundColor='#61876e' color={'white'}>
-                    <Link to={"/payathospital"}>pay in hospital</Link>
+                    <Link to={"/payathospital"}>Proceed to Payment</Link>
                 </Button>
-                <Button variant='solid' backgroundColor='#61876e' color={'white'}>
-                    pay in Advance
-                </Button>
+                    
                 </ButtonGroup>
             </CardFooter>
+            </Center>
         </Card>
         
     </Center>
