@@ -48,7 +48,7 @@ export const updateStatusFn = (id, status) => (dispatch) => {
       console.log(res.data);
       data = res.data.status;
       mydata = !data;
-      console.log("data-=>", mydata);
+      console.log("mydata-=>", mydata,"data=",data);
       dispatch({ type: UPDATE_STATUS, payload: res.data });
     })
     .catch((err) => {

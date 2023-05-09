@@ -92,7 +92,7 @@ export const DoctorHome = () => {
                   {patients?.length > 0 &&
                     patients?.map((el) => {
                       return (
-                        <Tr>
+                        <Tr key={el.id}>
                           <PatientRow
                             {...el}
                             handleAprove={handleAprove}
