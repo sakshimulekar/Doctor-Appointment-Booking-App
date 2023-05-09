@@ -44,11 +44,12 @@ export const SinglePage = () => {
       doctor: doctorsData.name,
       hospital: doctorsData.location,
       fees: doctorsData.fees,
-      profile:doctorsData.profile
+      profile:doctorsData.profile,
+      Image:doctorsData.image
     }
     dispatch(postPatient(data))
     setInput(initial)
-    doctorsData = []
+
     console.log(doctorsData)
   }
 

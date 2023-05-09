@@ -1,10 +1,51 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, FormLabel, Input, FormControl, Button } from "@chakra-ui/react";
+import { useNavigate } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
+import {
+  getDoctorsFn,
+  postLoginDoctorFn,
+} from "../../redux/DoctorReducer/action";
+
 export const DoctorLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+  const loginInfo = useSelector((state) => state.doctorReducer.Doctors);
+  //console.log("loginInfo", loginInfo);
+
+  useEffect(() => {
+    dispatch(getDoctorsFn());
+  }, []);
+  function validateDoctor(username, password) {
+    const user = loginInfo.find(
+      (user) => user.email === username && user.password === password
+    );
+
+    return user;
+  }
+
+  function validateLogin(username, password) {
+    const user = loginInfo.find(
+      (user) => user.email === username && user.password === password
+    );
+    return user !== undefined;
+  }
+
   const handleSubmit = () => {
     console.log(username, password);
+    const isValid = validateLogin(username, password);
+
+    const user = validateDoctor(username, password);
+
+    dispatch(postLoginDoctorFn(user));
+
+    if (isValid) {
+      navigate("/doctorpage");
+    }
     setPassword("");
     setUsername("");
   };

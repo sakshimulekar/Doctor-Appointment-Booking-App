@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter,ButtonGroup,Divider,Stack,Heading,Text,Center,Button} from '@chakra-ui/react'
+import { Card, CardBody, CardFooter,ButtonGroup,Divider,Stack,Image,Text,Center,Button, Box} from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -13,18 +13,23 @@ export const ViewHistory = () => {
 
 
   return (
-    <Center>
-        <Card w={"50%"} m={"20px"}>
+    <Center bg={"one"} m={"10px"}>
+        
+        <Card w={"50%"} m={"20px"} boxShadow={"xl"} >
             <CardBody>
-                <Stack mt='6' spacing='3'>
+                <Box mt='6' spacing='3' display={"flex"} justifyContent="space-evenly">
+                <Box>
+                <Image borderRadius="full" w={"150px"} h={"150px"} src={data.image} alt="doctor image"/>
+                </Box>
+                <Box>
                 <Text size='md' as={"b"}> {data.doctor} </Text>
                 <Text>{data.profile}</Text>
-                <Text>Hospital : {data.hospital}</Text>
+                <Text>Hospital :{data.hospital}</Text>
                 <Text>{`Appointment Date : ${data.date} `}</Text>
                 <Text>{`Appointment Time : ${data.time}`}</Text>
                 <Text>Fees : {data.fees} EGP</Text>
-                
-                </Stack>
+                </Box>
+                </Box>
             </CardBody>
 
             <Divider />
@@ -41,18 +46,19 @@ export const ViewHistory = () => {
             
             <Divider />
             
-
+            <Center>
             <CardFooter>
                 <ButtonGroup gap={"30px"}>
+                    
                 <Button variant='solid' backgroundColor='#61876e' color={'white'}>
-                    <Link to={"/payathospital"}>pay in hospital</Link>
+                    <Link to={"/payathospital"}>Proceed to Payment</Link>
                 </Button>
-                <Button variant='solid' backgroundColor='#61876e' color={'white'}>
-                    pay in Advance
-                </Button>
+                    
                 </ButtonGroup>
             </CardFooter>
+            </Center>
         </Card>
+        
     </Center>
   )
 }
