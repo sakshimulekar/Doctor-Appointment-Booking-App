@@ -23,6 +23,22 @@ export const Dashboard = () => {
     console.log(data)
     const dispatch = useDispatch()
 
+    const heartD = data.filter((e)=>e.category==="heart")
+    console.log("heartD :",heartD,heartD.length)
+
+    const brainD = data.filter((e)=>e.category==="brain")
+    console.log("brainD :",brainD,brainD.length)
+
+    const dentalD = data.filter((e)=>e.category==="dentist")
+    console.log("dentalD :",dentalD,dentalD.length)
+
+    const boneD = data.filter((e)=>e.category==="bone")
+    console.log("boneD :",boneD,boneD.length)
+
+    const avail = data.filter((e)=>e.status===true)
+    console.log("avail :",avail, avail.length)
+
+    
     const handleEdit = (id) => {
       dispatch(editDoc(id)).then(()=>{
         setupdate(p=>!p)
