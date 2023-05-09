@@ -15,6 +15,7 @@ import { AdminPage } from "./AdminPage";
 import { AddDoct } from "../components/Admin/AddDoct";
 import { EditDoct } from "../components/Admin/EditDoct";
 import DoctorLoginPage from "./DoctorLoginPage";
+import { AdminLogin } from "../components/Admin/AdminLogin";
 export const Mainroutes = () => {
   return (
     <Routes>
@@ -39,6 +40,7 @@ export const Mainroutes = () => {
       <Route path="/doctorAdmin" element={<AddDoct />} />
       <Route path="/edit/{id}" element={<EditDoct />} />
       <Route path="/doctorloginpage" element={<DoctorLoginPage />} />
+      <Route path="/adminLogin" element={<AdminLogin/>}/>
       <Route path="*" element={<h1>404 page not found</h1>} />
     </Routes>
   );
