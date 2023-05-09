@@ -15,26 +15,52 @@ import {
   Button,
   Switch,
   Select,
+  Input,
+  Checkbox,
 } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getLoginDoctorFn } from "../../redux/DoctorReducer/action";
+import axios from "axios";
+
+import { getPatient, updateStatusFn } from "../../redux/PatientReducer/action";
+import PatientRow from "./PatientRow";
 
 export const DoctorHome = () => {
-  const doc = "Dr. Nardeen Adel";
+  //const [status, setStatus] = useState(false);
+  const logindoc = useSelector((state) => state.doctorReducer.Doctors);
+  const patients = useSelector((state) => state.patientReducer.patients);
+
+  console.log("patients", patients);
+  console.log("doctor data", logindoc);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    hello();
+    dispatch(getLoginDoctorFn());
+    dispatch(getPatient());
+  }, []);
+
+  const doc = logindoc[0]?.name || "Doctor Name";
+  console.log("doctor", doc);
 
   //Toast
   const toast = useToast();
   function hello() {
     toast({
-      title: `Hello Doctor.${doc}`,
+      title: `Hello ${doc}`,
       description: "Have a Good Day..!",
       status: "success",
       duration: 2000,
       isClosable: true,
     });
   }
-  useEffect(() => {
-    hello();
-  }, []);
+
+  const handleAprove = (id, status) => {
+    console.log("status", status);
+    dispatch(updateStatusFn(id, status));
+  };
+  const handleReject = () => {};
+
   return (
     <Box bgColor={"one"} h={"80vh"}>
       <Box w={"80%"} m={"auto"}>
@@ -54,25 +80,27 @@ export const DoctorHome = () => {
               <Table variant="simple">
                 <Thead>
                   <Tr>
+                    <Th>Number</Th>
                     <Th>Patient Name</Th>
                     <Th>Age</Th>
                     <Th>Gender</Th>
                     <Th>Status</Th>
+                    <Th>Actions</Th>
                   </Tr>
                 </Thead>
                 <Tbody>
-                  <Tr>
-                    <Td>Munna Bhai</Td>
-                    <Td>40</Td>
-                    <Td>M</Td>
-                    <Td>
-                      <Select placeholder="Select option">
-                        <option value="false">Pending</option>
-                        <option value="ture">Approve</option>
-                        <option value="false">Rejected</option>
-                      </Select>
-                    </Td>
-                  </Tr>
+                  {patients?.length > 0 &&
+                    patients?.map((el) => {
+                      return (
+                        <Tr>
+                          <PatientRow
+                            {...el}
+                            handleAprove={handleAprove}
+                            handleReject={handleReject}
+                          />
+                        </Tr>
+                      );
+                    })}
                 </Tbody>
               </Table>
             </TableContainer>

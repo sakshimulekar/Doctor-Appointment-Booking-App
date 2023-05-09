@@ -64,7 +64,7 @@ export const Navbar = () => {
             </Button>
           </Box>
         </Link>
-        <Link to={"/doctorpage"}>
+        <Link to={"/doctorloginpage"}>
           <Box _hover={{ textDecoration: "underline" }}>
             <Button colorScheme="two" variant="outline" color={"two"}>
               Doctor
