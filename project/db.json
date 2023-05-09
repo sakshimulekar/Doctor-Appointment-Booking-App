@@ -406,12 +406,17 @@
     }
   ],
   "login": [
-   
     {
       "email": "shakshi@gmail.com",
       "password": "12345",
       "username": "Shakshi",
       "id": 1
+    },
+    {
+      "email": "",
+      "password": "",
+      "username": "",
+      "id": 2
     }
   ]
 }

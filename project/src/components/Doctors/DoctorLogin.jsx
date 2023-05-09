@@ -8,7 +8,6 @@ import {
   postLoginDoctorFn,
 } from "../../redux/DoctorReducer/action";
 
-
 export const DoctorLogin = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -28,21 +27,16 @@ export const DoctorLogin = () => {
 
     return user;
   }
-  function validateLogin(username, password) {
-    const user = loginInfo.find(
-      (user) => user.email === username && user.password === password
-
-  const loginInfo = [
-    { id: 1, username: "robertjohnson@gmail.com", password: "12345" },
-    { id: 2, username: "sarahlee@gmail.com", password: "12345" },
-    { id: 3, username: "emilywatson@gmail.com", password: "12345" },
-    { id: 4, username: "janesmith@gmail.com", password: "12345" },
-  ];
+  // function validateLogin(username, password) {
+  //   const user = loginInfo.find(
+  //     (user) => user.email === username && user.password === password
+  //   );
+  //   return user;
+  // }
 
   function validateLogin(username, password) {
     const user = loginInfo.find(
       (user) => user.username === username && user.password === password
-
     );
     return user !== undefined;
   }
@@ -54,8 +48,6 @@ export const DoctorLogin = () => {
     const user = validateDoctor(username, password);
 
     dispatch(postLoginDoctorFn(user));
-
-
 
     if (isValid) {
       navigate("/doctorpage");
