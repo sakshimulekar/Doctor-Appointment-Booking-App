@@ -40,7 +40,7 @@
       "rating": 4.9,
       "fees": "$250",
       "location": "789 Oak St, Anytown, USA",
-      "status": true,
+      "status": false,
       "gender": "female",
       "category": "female disorder"
     },
@@ -54,7 +54,7 @@
       "rating": 4.5,
       "fees": "$200",
       "location": "321 Maple St, Anytown, USA",
-      "status": true,
+      "status": false,
       "gender": "male",
       "category": "dentist"
     },
@@ -110,7 +110,7 @@
       "rating": 4.8,
       "fees": "$250",
       "location": "888 Elm St, Anytown, USA",
-      "status": true,
+      "status": false,
       "gender": "female",
       "category": "dentist"
     },
@@ -309,6 +309,7 @@
       "time": "1.00 PM",
       "status": true,
       "doctor": "Dr. James Lee",
+      "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8ZG9jdG9yfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
       "hospital": "555 Pine St, Anytown, USA",
       "fees": "$350",
       "profile": "cardiologist",
@@ -326,6 +327,7 @@
       "time": "1.00 PM",
       "status": true,
       "doctor": "Dr. Sarah Lee",
+      "image": "https://thumbs.dreamstime.com/b/smiling-female-doctor-holding-medical-records-lab-coat-her-office-clipboard-looking-camera-56673035.jpg",
       "hospital": "789 Oak St, Anytown, USA",
       "fees": "$250",
       "profile": "gynaecologist",
@@ -401,6 +403,15 @@
     },
     {
       "id": 3
+    }
+  ],
+  "login": [
+   
+    {
+      "email": "shakshi@gmail.com",
+      "password": "12345",
+      "username": "Shakshi",
+      "id": 1
     }
   ]
 }

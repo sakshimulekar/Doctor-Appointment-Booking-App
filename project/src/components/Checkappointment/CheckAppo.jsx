@@ -21,15 +21,16 @@ export const CheckAppo = () => {
 
   const handleClick = () => {
     dispatch(getData(paramObj))
+    setQuery("")
   } 
   return (
-  <Box>
+  <Box w={"100%"} h={"80vh"} bg={"one"} boxShadow='xl' m={"10px"}>
     <Center>
-      <InputGroup size='md' w={"40%"}>
+      <InputGroup size='md' w={"40%"} m={"40px"}>
         <Input
           pr='4rem'
           type='text'
-          placeholder='Enter patient name/ registrantion'
+          placeholder='Enter patient name/ registration'
           value={query}
           onChange={(e)=>setQuery(e.target.value)}
         />
@@ -39,7 +40,7 @@ export const CheckAppo = () => {
       </InputGroup>
     </Center>
 
-    {data.length === 0?(<Center>Result not found</Center>):(
+    {data.length === 0?(<Center as='b'>Result not found</Center>):(
 
      data?.map((e)=>{
       return (

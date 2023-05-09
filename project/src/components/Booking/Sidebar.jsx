@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Checkbox, CheckboxGroup,Text,Box,VStack } from '@chakra-ui/react'
+import { Checkbox, CheckboxGroup,Text,Box,VStack, Divider } from '@chakra-ui/react'
 import { useSearchParams } from 'react-router-dom'
 export const Sidebar = () => {
 
@@ -10,13 +10,13 @@ const initGender=searchparams.getAll('gender')
 const initSpeciality=searchparams.getAll('category')
 
 const initSort=searchparams.getAll('order')
-console.log(initSort)
+//console.log(initSort)
 const [gender,setGender]=useState(initGender || [])
 
 const [category,setCategory]=useState(initSpeciality || [])
 
 const [sort,setSort]=useState(initSort || '')
-console.log(sort)
+//console.log(sort)
 
 useEffect(()=>{
   let params={
@@ -71,17 +71,19 @@ setGender(newGender)
   return (
     <div >
      <Box p='15' m='5'>
-        <Box>
-        Filters
+        <Box bgColor='#365349' rounded='md' p='2'>
+        <Text fontSize='2xl'color='#fafaf1'> Filters</Text>
         </Box>
-        <Box >
+        
+        <Box p='3'>
         <Text fontSize="xl" >Filter By Speciality</Text>
         <VStack alignItems={"left"}>
           <Box>
         <input type='checkbox' 
         value={'heart'} 
         onChange={handelSpeciality}
-        checked={category.includes('heart')}     
+        checked={category.includes('heart')} 
+        style={{accentColor: '#365349'}}    
         />
         <label> Heart </label>
         </Box>
@@ -90,6 +92,7 @@ setGender(newGender)
         value={'brain'} 
         onChange={handelSpeciality}
         checked={category.includes('brain')} 
+        style={{accentColor: '#365349'}} 
         />
         <label> Brain </label>
         </Box>
@@ -98,6 +101,7 @@ setGender(newGender)
         value={'dentist'} 
         onChange={handelSpeciality}
         checked={category.includes('dentist')} 
+        style={{accentColor: '#365349'}} 
         />
         <label> Oral </label>
         </Box>
@@ -105,7 +109,8 @@ setGender(newGender)
         <input type='checkbox' 
         value={'female disorder'} 
         onChange={handelSpeciality}
-        checked={category.includes('female disorder')} 
+        checked={category.includes('female disorder')}
+        style={{accentColor: '#365349'}}  
         />
         <label> Female Disorder </label>
         </Box>
@@ -113,13 +118,15 @@ setGender(newGender)
         <input type='checkbox' 
         value={'bone'} 
         onChange={handelSpeciality}
-        checked={category.includes('bone')}/>
+        checked={category.includes('bone')}
+        style={{accentColor: '#365349'}} 
+        />
         <label> Bones </label>
         </Box>
         </VStack>
           </Box>
-          
-        <Box>
+        <Divider/>  
+        <Box p='3'>
         <Text fontSize="xl">Filter By Gender</Text>
         <VStack alignItems='left'>
         <Box>
@@ -127,6 +134,7 @@ setGender(newGender)
         value={'male'} 
         onChange={handelGender}
         checked={gender.includes('male')}
+        style={{accentColor: '#365349'}} 
         />
         <label> Male </label>
         </Box>
@@ -135,13 +143,14 @@ setGender(newGender)
         value={'female'} 
         onChange={handelGender}
         checked={gender.includes('female')}
+        style={{accentColor: '#365349'}} 
         />
         <label> Female </label>
         </Box>
        </VStack>
           </Box>
-         
-        <Box>
+          <Divider />  
+        <Box p='3'>
         <Text fontSize="xl">Sort By Fees</Text>
         <div onChange={handelSort}>
           <div>
@@ -149,6 +158,7 @@ setGender(newGender)
           value={'asc'} 
           name='order'
           defaultChecked={sort==='asc'}
+          style={{accentColor: '#365349'}} 
           />
           <label> Low to High </label>
           </div>
@@ -157,13 +167,20 @@ setGender(newGender)
           value={'desc'} 
           name='order'
           defaultChecked={sort==='desc'}
+          style={{accentColor: '#365349'}} 
           />
           <label> High to Low </label>
           </div>
         </div>
 
           </Box>
-  
+          <Divider/>
+          <Text fontSize="xl" p='3'>Promo Code</Text>
+          <Divider/>
+          <Text fontSize="xl" p='3'>Examination Fees</Text>
+          <Divider/>
+          <Text fontSize="xl" p='3'>Entiry</Text>
+         
 
       </Box>
 
