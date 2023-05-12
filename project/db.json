@@ -10,7 +10,7 @@
       "rating": 4.8,
       "fees": "$300",
       "location": "123 Main St, Anytown, USA",
-      "status": true,
+      "status": false,
       "gender": "female",
       "category": "heart"
     },
@@ -38,7 +38,7 @@
       "rating": 4.9,
       "fees": "$250",
       "location": "789 Oak St, Anytown, USA",
-      "status": true,
+      "status": false,
       "gender": "female",
       "category": "female disorder"
     },

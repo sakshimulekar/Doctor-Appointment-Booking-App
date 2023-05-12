@@ -75,6 +75,6 @@ export const DoctorLogin = () => {
           </Button>
         </FormControl>
       </Box>
-    </Box>
-  );
+    </Box>
+  );
 };
