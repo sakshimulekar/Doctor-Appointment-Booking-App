@@ -57,6 +57,7 @@ export const StackbarCh = () => {
             color:'#FFA000'
           }
         ]}
+        
         options={{
           title:{
             text:"Doctor's Availablity Status",
