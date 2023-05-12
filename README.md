@@ -17,11 +17,13 @@ This is a small web application for booking appointments with doctors. It allows
 ## Tech Stack
 
 - Javascript
-- React-Redux
+- React
+- Redux
 - HTML
 - CSS
 - Chakra-UI
 - ApexCharts
+- React-icons
 
 ## Getting Started
 
