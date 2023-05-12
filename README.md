@@ -1,7 +1,7 @@
 # stormy-prose-3801
 https://vermillion-faun-c86694.netlify.app/
 
-# Doctor's Booking Appointment Application
+# Medicure
 
 This is a small web application for booking appointments with doctors. It allows users to search for doctors by name, specialty, or location, view their availability, and book appointments online. The application is built using Javascript, React-Redux, HTML, CSS, and Chakra-UI, with some additional libraries like ApexCharts for data visualization.
 
@@ -44,3 +44,10 @@ Once the application is up and running, you can:
 ## Conclusion
 
 This application provides a simple and efficient way for patients to book appointments with doctors online. With its intuitive user interface and powerful features, it is sure to be a valuable tool for healthcare providers and patients alike.
+
+## Contributors (Group)
+Sakshi Mulekar (Team-Lead)
+Sohel Syed
+Sonu kumar
+Ganesh Yadav
+
