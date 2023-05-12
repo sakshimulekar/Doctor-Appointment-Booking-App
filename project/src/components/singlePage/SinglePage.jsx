@@ -227,7 +227,7 @@ export const SinglePage = () => {
                 title: 'Application submitted!',
                 description: "Your application has been received. We will review your application and respond within the next 48 hours.",
                 status: 'success',
-                duration: 5000,
+                duration: 2000,
                 isClosable: true,
                 position:"top",
                 })

@@ -7,14 +7,17 @@
     "@chakra-ui/react": "^2.6.0",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
+    "@react-pdf/renderer": "^3.1.9",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
+    "chart.js": "^4.3.0",
     "framer-motion": "^10.12.7",
     "json-server": "^0.17.3",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-pdf": "^6.2.2",
     "react-redux": "^8.0.5",
@@ -48,6 +51,7 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ]
+    ],
+    "homepage": "."
   }
 }

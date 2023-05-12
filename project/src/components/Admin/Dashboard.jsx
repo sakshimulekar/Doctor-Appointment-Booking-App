@@ -12,6 +12,7 @@ import { delData, editDoc, getDoctor } from '../../redux/AdminReducer/action'
 import { DocCrud } from './DocCrud'
 import { Link } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
+import { Chart } from './BarChart'
 
 
 export const Dashboard = () => {
@@ -23,6 +24,9 @@ export const Dashboard = () => {
     console.log(data)
     const dispatch = useDispatch()
 
+    
+
+    
     const handleEdit = (id) => {
       dispatch(editDoc(id)).then(()=>{
         setupdate(p=>!p)
@@ -49,7 +53,7 @@ export const Dashboard = () => {
           <Center>
           <Table  w={"80%"} m={"20px"} boxShadow={"md"} >
             <Thead>
-              <Tr>
+              <Tr h="10">
                 <Th><Center fontSize={"15px"}>Sr.No</Center></Th>
                 <Th fontSize={"15px"}>Doctor Name</Th>
                 <Th fontSize={"15px"}>profile</Th>
@@ -71,6 +75,7 @@ export const Dashboard = () => {
           </Table>
           </Center>
         </TableContainer >
+        
     </Box>
   
   )

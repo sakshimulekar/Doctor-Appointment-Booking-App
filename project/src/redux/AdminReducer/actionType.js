@@ -4,3 +4,9 @@ export const GET_DOCTOR_FAIL = "GET_DOCTOR_FAIL";
 export const EDIT_DOCTOR_SUCC = "EDIT_DOCTOR_SUCC";
 export const DEL_DOCTOR_SUCC = "DEL_DOCTOR_SUCC"
 export const ADD_DOCTOR_SUCC = "ADD_DOCTOR_SUCC"
+
+export const PATIENT_REQ = "PATIENT_REQ";
+export const PATIENT_SUCC = "PATIENT_SUCC";
+export const PATIENT_FAIL = "PATIENT_FAIL";
+export const PATIENT_ADD = "PATIENT_ADD";
+export const PATIENT_DEL = "PATIENT_DEL";

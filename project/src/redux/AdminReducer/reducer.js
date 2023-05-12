@@ -1,9 +1,10 @@
-import { ADD_DOCTOR_SUCC, DEL_DOCTOR_SUCC, EDIT_DOCTOR_FAIL, EDIT_DOCTOR_REQ, EDIT_DOCTOR_SUCC, GET_DOCTOR_FAIL, GET_DOCTOR_REQ, GET_DOCTOR_SUCC } from "./actionType";
+import { ADD_DOCTOR_SUCC, DEL_DOCTOR_SUCC, EDIT_DOCTOR_FAIL, EDIT_DOCTOR_REQ, EDIT_DOCTOR_SUCC, GET_DOCTOR_FAIL, GET_DOCTOR_REQ, GET_DOCTOR_SUCC, PATIENT_FAIL, PATIENT_REQ, PATIENT_SUCC } from "./actionType";
 
 const initial = {
     isLoading : false,
     isError : false,
-    doctor : []
+    doctor : [],
+    patient : []
 
 }
 export const reducer = (state=initial, {type,payload}) => {
@@ -23,12 +24,12 @@ export const reducer = (state=initial, {type,payload}) => {
             return {...state,isLoading:false,doctor:[...state.doctor,payload]}
         case GET_DOCTOR_FAIL:
             return {...state,isLoading:false,isError:true}
-        
-        // case EDIT_DOCTOR_REQ:
-        //     return {...state,isLoading:true}
-        
-        // case EDIT_DOCTOR_FAIL :
-        //     return {...state, isLoading:false, isError:true}
+        case PATIENT_REQ:
+            return {...state,isLoading:true}
+        case PATIENT_SUCC:
+            return {...state,isLoading:false,patient:payload}
+        case PATIENT_FAIL:
+            return {...state,isLoading:false,isError:true}
         default :
             return state;
     }
