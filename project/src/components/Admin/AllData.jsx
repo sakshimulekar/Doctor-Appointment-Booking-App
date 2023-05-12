@@ -34,7 +34,6 @@ export const AllData = () => {
               </Box>
                 <Box width={"98%"} display={"flex"} justifyContent={"space-between"} >
               
-
                   <Box width={"50%"}  m={"10px"} boxShadow={"xl"} p={"20px"}>
                     <Center>
                     <Box
