@@ -5,6 +5,7 @@ import { Sidebar } from './Sidebar'
 import { Box,Heading,Text,Center} from '@chakra-ui/react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getDoctor, getPatient } from '../../redux/AdminReducer/action'
+import { StackbarCh } from './StackbarCh'
 
 export const AllData = () => {
   const data = useSelector((store)=>store.adminReducer.doctor)
@@ -12,6 +13,7 @@ export const AllData = () => {
 
   const p = useSelector((store)=>store.adminReducer.patient)
   console.log(p)
+
   const approve = p.filter((e)=>e.status===true)
   const waiting = p.filter((e)=>e.status===false)
   console.log(approve.length)
@@ -26,9 +28,13 @@ export const AllData = () => {
             <Box w={"78%"}  boxShadow={"2xl"} p={"20px"}>
             <Heading>Welcome Admin !</Heading>
             <Text color="grey" as="b">Dashboard</Text>
+              <Box display={"flex"} justifyContent={"space-between"}>
                 <BarChart/>
+                <StackbarCh/>
+              </Box>
                 <Box width={"98%"} display={"flex"} justifyContent={"space-between"} >
-                
+              
+
                   <Box width={"50%"}  m={"10px"} boxShadow={"xl"} p={"20px"}>
                     <Center>
                     <Box
