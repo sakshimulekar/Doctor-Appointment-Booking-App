@@ -27,10 +27,10 @@ export const BarChart = () => {
     const avail = data.filter((e)=>e.status===true)
     console.log(avail)
   return (
-    <div style={{width:"60%",margin:"10px",padding:"20px",boxShadow: ("rgba(0, 0, 0, 0.24) 0px 3px 8px")}}>
+    <div style={{width:"50%",margin:"10px",padding:"10px",boxShadow: ("rgba(0, 0, 0, 0.24) 0px 3px 8px")}}>
         <Chart
         type='bar'
-        width={550} 
+        width={450} 
         height={550}
         
         series={[
