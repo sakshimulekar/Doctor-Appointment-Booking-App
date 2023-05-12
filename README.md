@@ -48,8 +48,8 @@ Once the application is up and running, you can:
 This application provides a simple and efficient way for patients to book appointments with doctors online. With its intuitive user interface and powerful features, it is sure to be a valuable tool for healthcare providers and patients alike.
 
 ## Contributors (Group)
-Sakshi Mulekar (Team-Lead)
-Sohel Syed
-Sonu kumar
-Ganesh Yadav
+- Sakshi Mulekar (Team-Lead)
+- Sohel Syed
+- Sonu kumar
+- Ganesh Yadav
 
