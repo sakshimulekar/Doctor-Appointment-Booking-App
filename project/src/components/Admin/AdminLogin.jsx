@@ -23,7 +23,7 @@ export const AdminLogin = () => {
             password
         }
         if(obj.name==="sak@admin" && obj.password === "12345"){
-            navigate("/admin")
+            navigate("/allAdminData")
         }
         console.log(obj)
     }

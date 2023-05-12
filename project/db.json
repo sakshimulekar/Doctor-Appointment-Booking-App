@@ -220,7 +220,7 @@
       "rating": 4.8,
       "fees": "$300",
       "location": "101 Elm St, Anytown, USA",
-      "status": true,
+      "status": false,
       "gender": "male",
       "category": "dentist"
     },
@@ -234,7 +234,7 @@
       "rating": 4.8,
       "fees": "$150",
       "location": "123 Main St, Anytown USA",
-      "status": true,
+      "status": false,
       "gender": "female",
       "category": "female disorder"
     },
@@ -377,6 +377,92 @@
       "fees": "$300",
       "profile": "cardiologist",
       "id": 5
+    },
+    {
+      "date": "2023-06-15",
+      "patient_name": "maithili",
+      "Address": "nagpur",
+      "mobile": "64359435830",
+      "email": "maithili@gmail.com",
+      "age": "42",
+      "gender": "female",
+      "description": "high blood precure",
+      "time": "1.30 PM",
+      "status": false,
+      "doctor": "Dr. Rachel Chen",
+      "hospital": "666 Oak St, Anytown, USA",
+      "fees": "$400",
+      "profile": "neurologist",
+      "id": 6
+    },
+    {
+      "date": "2023-07-21",
+      "patient_name": "saksham",
+      "Address": "uttar Pradesh",
+      "mobile": "94358306435",
+      "email": "saksham@gmail.com",
+      "age": "34",
+      "gender": "male",
+      "description": "cavity",
+      "time": "1.00 PM",
+      "status": false,
+      "doctor": "Dr. Michael Johnson",
+      "hospital": "321 Maple St, Anytown, USA",
+      "fees": "$200",
+      "profile": "dentist",
+      "id": 7
+    },
+    {
+      "date": "2023-06-18",
+      "patient_name": "parul",
+      "Address": "bihar",
+      "mobile": "64358305943",
+      "email": "parul@gmail.com",
+      "age": "22",
+      "gender": "female",
+      "description": "PCOD",
+      "time": "2.30 PM",
+      "status": true,
+      "doctor": "Dr. David Kim",
+      "hospital": "777 Maple St, Anytown, USA",
+      "fees": "$300",
+      "profile": "gynaecologist",
+      "id": 8
+    },
+    {
+      "date": "2023-05-21",
+      "patient_name": "prakash",
+      "Address": "Delhi",
+      "mobile": "83064359435",
+      "email": "prakash@gmail.com",
+      "age": "24",
+      "gender": "male",
+      "description": "joint pain",
+      "time": "1.30 PM",
+      "status": true,
+      "doctor": "Dr. Kevin Nguyen",
+      "hospital": "888 Elm St, Anytown, USA",
+      "fees": "$350",
+      "profile": "orthopedist",
+      "id": 9
+    },
+    {
+      "date": "2023-05-19",
+      "patient_name": "shraddha",
+      "Address": "nagpur",
+      "mobile": "1234667891",
+      "email": "mulekarshraddha@gmail.com",
+      "age": "22",
+      "gender": "female",
+      "description": "checking pulse rate",
+      "time": "2.00 PM",
+      "status": true,
+      "doctor": "Dr. Jane Smith",
+      "hospital": "123 Main St, Anytown, USA",
+      "fees": "$300",
+      "profile": "cardiologist",
+      "Image": "https://t3.ftcdn.net/jpg/01/30/45/54/360_F_130455409_fTuinPO1LXECv5hlk9VBREnL6yowYUo3.jpg",
+      "id": 10
     }
   ],
   "LogedInDoctor": [
@@ -395,6 +481,24 @@
       "category": "heart",
       "email": "janesmith@gmail.com",
       "password": "12345"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
     }
   ],
   "login": [
@@ -439,6 +543,12 @@
       "password": "12345",
       "username": "",
       "id": 7
+    },
+    {
+      "email": "mulekarshraddha@gmail.com",
+      "password": "12345",
+      "username": "shraddha",
+      "id": 8
     }
   ]
 }

@@ -12,6 +12,7 @@ import { delData, editDoc, getDoctor } from '../../redux/AdminReducer/action'
 import { DocCrud } from './DocCrud'
 import { Link } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
+import { Chart } from './BarChart'
 
 
 export const Dashboard = () => {
@@ -23,20 +24,7 @@ export const Dashboard = () => {
     console.log(data)
     const dispatch = useDispatch()
 
-    const heartD = data.filter((e)=>e.category==="heart")
-    console.log("heartD :",heartD,heartD.length)
-
-    const brainD = data.filter((e)=>e.category==="brain")
-    console.log("brainD :",brainD,brainD.length)
-
-    const dentalD = data.filter((e)=>e.category==="dentist")
-    console.log("dentalD :",dentalD,dentalD.length)
-
-    const boneD = data.filter((e)=>e.category==="bone")
-    console.log("boneD :",boneD,boneD.length)
-
-    const avail = data.filter((e)=>e.status===true)
-    console.log("avail :",avail, avail.length)
+    
 
     
     const handleEdit = (id) => {
@@ -65,7 +53,7 @@ export const Dashboard = () => {
           <Center>
           <Table  w={"80%"} m={"20px"} boxShadow={"md"} >
             <Thead>
-              <Tr>
+              <Tr h="10">
                 <Th><Center fontSize={"15px"}>Sr.No</Center></Th>
                 <Th fontSize={"15px"}>Doctor Name</Th>
                 <Th fontSize={"15px"}>profile</Th>
@@ -87,6 +75,7 @@ export const Dashboard = () => {
           </Table>
           </Center>
         </TableContainer >
+        
     </Box>
   
   )
