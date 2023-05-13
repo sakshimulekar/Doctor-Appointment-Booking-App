@@ -1,56 +1,66 @@
-import React from 'react'
-import {Page,Text,Image,Document,StyleSheet} from "@react-pdf/renderer";
-import { ViewHistory } from './ViewHistory';
-import { Box, CardBody, Center, Divider, Stack,Card,CardFooter,Button,Link,ButtonGroup } from '@chakra-ui/react';
-import { useSelector } from 'react-redux';
-
-
-const styles = StyleSheet.create({
-    body:{
-        paddingTop:35,
-        paddingBottom:65,
-        paddingHorizontal:35,
-    },
-    header : {
-        fontSize:12,
-        marginBottom : 20,
-        textAlign : "center",
-        color : "grey",
-    },
-    pageNumber : {
-        position:"absolute",
-        fontSize : 12,
-        bottom:30,
-        left : 0,
-        right:0,
-        textAlign:"center",
-        color:"grey"
-    }
-})
+import { Card, CardBody, CardFooter,ButtonGroup,Divider,Stack,Image,Text,Center,Button, Box} from '@chakra-ui/react'
+import React,{useRef} from 'react'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import {useReactToPrint} from "react-to-print"
 
 export const Recept = () => {
-    // const data = useSelector((store)=>{
-    //     console.log(store.doctorGetReducer.viewHistory)
-    //     return store.doctorGetReducer.viewHistory
-    // })
-    // console.log("data :", data)
-    // const data = useSelector((store)=>{
-    //     console.log(store.doctorGetReducer.viewHistory)
-    //     return store.doctorGetReducer.viewHistory
-    // })
+    const componentPDF = useRef()
 
+    const data = useSelector((store)=>{
+        console.log(store.doctorGetReducer.viewHistory)
+        return store.doctorGetReducer.viewHistory
+    })
+    console.log("data :", data)
+
+    const generatePDF = useReactToPrint({
+        content:()=>componentPDF.current,
+        documentTitle:"Appointment Recept",
+        onAfterPrint:()=>alert("Recept download successfully")
+    });
   return (
-    <Document>
-        <Page style={styles.body}>
-            {/* <Text>
-                Hello I am sakshi
-            </Text>
-            <Text
-            style={styles.pageNumber}
-            render={({pageNumber,totalPages})=>'${pageNumber}/${totalPages}'}
-            fixed
-            /> */}
-        </Page>
-    </Document>
+    <Center bg={"one"} m={"10px"}>
+        
+        <Card w={"40%"} m={"20px"} boxShadow={"xl"} ref={componentPDF}>
+            <CardBody >
+                <Box mt='6' spacing='3' display={"flex"} justifyContent="space-evenly">
+                <Box>
+                <Image borderRadius="full" w={"150px"} h={"150px"} src={data.image} alt="doctor image"/>
+                </Box>
+                <Box>
+                <Text size='md' as={"b"}> {data.doctor} </Text>
+                <Text>{data.profile}</Text>
+                <Text>Hospital :{data.hospital}</Text>
+                <Text>{`Appointment Date : ${data.date} `}</Text>
+                <Text>{`Appointment Time : ${data.time}`}</Text>
+                <Text>Fees : {data.fees} EGP</Text>
+                </Box>
+                </Box>
+            </CardBody>
+
+            <Divider />
+
+            <CardBody>
+                <Stack mt='6' spacing='3'>
+                <Text size='md' as={"b"}>Patient Details </Text>
+                <Text>Patient Name : {data.patient_name}</Text>
+                <Text as={"b"}>Appointment No : {"15"+Date.now()%1000}</Text>
+                <Text>{data.email}</Text>
+                <Text>{data.mobile}</Text>
+                </Stack>
+            </CardBody>
+            
+            <Divider />
+            
+            <Center>
+            <CardFooter>
+                <ButtonGroup gap={"30px"}>
+                <Button onClick={generatePDF}>Download</Button>
+                </ButtonGroup>
+            </CardFooter>
+            </Center>
+        </Card>
+        
+    </Center>
   )
 }

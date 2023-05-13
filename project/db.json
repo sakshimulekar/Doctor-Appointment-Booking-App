@@ -38,7 +38,7 @@
       "rating": 4.9,
       "fees": "$250",
       "location": "789 Oak St, Anytown, USA",
-      "status": false,
+      "status": true,
       "gender": "female",
       "category": "female disorder"
     },
@@ -66,7 +66,7 @@
       "rating": 4.6,
       "fees": "$350",
       "location": "555 Pine St, Anytown, USA",
-      "status": false,
+      "status": true,
       "gender": "male",
       "category": "heart"
     },
@@ -549,6 +549,30 @@
       "password": "12345",
       "username": "shraddha",
       "id": 8
+    },
+    {
+      "email": "ashish@gmail.com",
+      "password": "12345",
+      "username": "ashish",
+      "id": 9
+    },
+    {
+      "email": "akash@gmail.com",
+      "password": "12345",
+      "username": "akash",
+      "id": 10
+    },
+    {
+      "email": "ashish@gmail.com",
+      "password": "12345",
+      "username": "ashish kumar",
+      "id": 11
+    },
+    {
+      "email": "ashish@gmail.com",
+      "password": "12345",
+      "username": "ashish kumar",
+      "id": 12
     }
   ]
 }

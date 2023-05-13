@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter,ButtonGroup,Divider,Stack,Image,Text,Center,Button, Box} from '@chakra-ui/react'
+import { Card, CardBody,Select, CardFooter,ButtonGroup,Divider,Stack,Image,Text,Center,Button, Box} from '@chakra-ui/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -41,6 +41,10 @@ export const ViewHistory = () => {
                 <Text as={"b"}>Appointment No : {"15"+Date.now()%1000}</Text>
                 <Text>{data.email}</Text>
                 <Text>{data.mobile}</Text>
+                <Select placeholder='Select option'>
+                    <option value='option1'>Pay in Advance</option>
+                    <option value='option2'>Pay At Hospital</option>
+                </Select>
                 </Stack>
             </CardBody>
             
