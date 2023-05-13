@@ -34,12 +34,12 @@ export const Navbar = () => {
             About Us
           </Text>{" "}
         </Box>
-        <Link to={"/login"}></Link>
-        <Box _hover={{ textDecoration: "underline" }}>
+        {/* <Link to={"/login"}></Link>
+        <Box >
           <Text color={"#61876e"} as={"b"}>
             Servies
           </Text>{" "}
-        </Box>
+        </Box> */}
         <Link to={"/bookingpage"}>
           <Box _hover={{ textDecoration: "underline" }}>
             <Text color={"#61876e"} as={"b"}>

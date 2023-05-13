@@ -21,7 +21,7 @@ import {
   
 } from '@chakra-ui/react'
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Link } from "react-router-dom";
+import { Link ,NavLink} from "react-router-dom";
 
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -33,7 +33,7 @@ export const Navbar = () => {
       alignItems={"center"}
       //p={"5"}
       w={"100%"}
-      
+      //border={"1px"}
       boxShadow="md"
       top={"0"}
       backgroundColor={"one"}
@@ -60,34 +60,36 @@ export const Navbar = () => {
         display={{ base: "none", md: "flex" }}
         gap={"5"}
         alignItems={"center"}
+        //border={"1px"}
+        mr={"40px"}
       >
-        <Link to={"/"}>
-          <Box _hover={{ textDecoration: "underline" }}>
-            <Text color={"#61876e"} as={"b"}>
+        <NavLink to={"/"}>
+          <Box>
+            <Text color={"#61876e"} as={"b"}  _hover={{ color:"#00796B",fontSize:"20px" }}>
               Home
             </Text>{" "}
           </Box>
-        </Link>
-        <Box _hover={{ textDecoration: "underline" }}>
-          <Text color={"#61876e"} as={"b"}>
+        </NavLink>
+        <Box >
+          <Text color={"#61876e"} as={"b"}  _hover={{ color:"#00796B",fontSize:"20px" }}>
             About Us
           </Text>{" "}
         </Box>
-        <Box _hover={{ textDecoration: "underline" }}>
+        {/* <Box _hover={{ textDecoration: "underline" }}>
           <Text color={"#61876e"} as={"b"}>
             Services
           </Text>{" "}
-        </Box>
+        </Box> */}
         <Link to={"/bookingpage"}>
-          <Box _hover={{ textDecoration: "underline" }}>
-            <Text color={"#61876e"} as={"b"}>
+          <Box >
+            <Text color={"#61876e"} as={"b"}  _hover={{ color:"#00796B",fontSize:"20px" }}>
               Appointment
             </Text>{" "}
           </Box>
         </Link>
         <Link to={"/checkAppoint"}>
-          <Box _hover={{ textDecoration: "underline" }}>
-            <Text color={"#61876e"} as={"b"}>
+          <Box>
+            <Text color={"#61876e"} as={"b"}  _hover={{ color:"#00796B",fontSize:"20px" }}>
               Booking
             </Text>{" "}
           </Box>
@@ -100,7 +102,7 @@ export const Navbar = () => {
           </Box>
         </Link> */}
         <Menu>
-  <MenuButton as={"b"} ><Text color={"two"}>Sign up</Text></MenuButton>
+  <MenuButton as={"b"}  _hover={{ color:"#00796B",fontSize:"20px" }}><Text color={"two"}>Sign up</Text></MenuButton>
   <MenuList>
     <MenuItem as='a' href='/login'>User Login</MenuItem>
     <MenuItem as='a' href='/doctorloginpage'>Doctor Login</MenuItem>

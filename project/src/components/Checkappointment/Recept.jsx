@@ -1,4 +1,4 @@
-import { Card, CardBody, CardFooter,ButtonGroup,Divider,Stack,Image,Text,Center,Button, Box} from '@chakra-ui/react'
+import { Card, CardBody, CardFooter,ButtonGroup,Divider,Stack,Image,Text,Center,Button, Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink} from '@chakra-ui/react'
 import React,{useRef} from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -19,7 +19,24 @@ export const Recept = () => {
         onAfterPrint:()=>alert("Recept download successfully")
     });
   return (
-    <Center bg={"one"} m={"10px"}>
+    
+    <>
+        <Breadcrumb ml={"30px"}>
+            <BreadcrumbItem>
+            <BreadcrumbLink href='/' color={"three"}>Home</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem>
+            <BreadcrumbLink href='/view' color={"three"}>View appointment</BreadcrumbLink>
+            </BreadcrumbItem>
+
+            <BreadcrumbItem>
+            <BreadcrumbLink href='/payathospital' color={"three"}>Payment</BreadcrumbLink>
+            </BreadcrumbItem>
+
+        </Breadcrumb>
+
+        <Center bg={"one"} m={"10px"}>
         
         <Card w={"40%"} m={"20px"} boxShadow={"xl"} ref={componentPDF}>
             <CardBody >
@@ -62,5 +79,6 @@ export const Recept = () => {
         </Card>
         
     </Center>
+    </>
   )
 }
