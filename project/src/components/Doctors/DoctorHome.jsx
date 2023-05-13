@@ -1,3 +1,4 @@
+//Doctor Home
 import {
   Box,
   HStack,
@@ -62,9 +63,10 @@ export const DoctorHome = () => {
     });
   };
   const handleReject = () => {};
-
+  const filterData = patients.filter((el) => el.doctor === doc);
+  console.log(filterData);
   return (
-    <Box bgColor={"one"} h={"80vh"}>
+    <Box bgColor={"one"}>
       <Box w={"80%"} m={"auto"}>
         <Box boxShadow="md" p={10}>
           <Text as={"b"} color={"two"}>
@@ -91,14 +93,15 @@ export const DoctorHome = () => {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {patients?.length > 0 &&
-                    patients?.map((el) => {
+                  {filterData?.length > 0 &&
+                    filterData?.map((el, i) => {
                       return (
                         <Tr key={el.id}>
                           <PatientRow
                             {...el}
                             handleAprove={handleAprove}
                             handleReject={handleReject}
+                            i={i}
                           />
                         </Tr>
                       );
@@ -109,6 +112,6 @@ export const DoctorHome = () => {
           </Box>
         </Box>
       </Box>
-    </Box>
-  );
+    </Box>
+  );
 };

@@ -10,7 +10,7 @@
       "rating": 4.8,
       "fees": "$300",
       "location": "123 Main St, Anytown, USA",
-      "status": false,
+      "status": true,
       "gender": "female",
       "category": "heart"
     },
@@ -463,6 +463,24 @@
       "profile": "cardiologist",
       "Image": "https://t3.ftcdn.net/jpg/01/30/45/54/360_F_130455409_fTuinPO1LXECv5hlk9VBREnL6yowYUo3.jpg",
       "id": 10
+    },
+    {
+      "date": "2023-05-19",
+      "patient_name": "ganesh yadav",
+      "Address": "uttarpradesh",
+      "mobile": "1234567890",
+      "email": "ganesh@gmail.com",
+      "age": "24",
+      "gender": "male",
+      "description": "high BP",
+      "time": "4.00 PM",
+      "status": true,
+      "doctor": "Dr. Jane Smith",
+      "hospital": "123 Main St, Anytown, USA",
+      "fees": "$300",
+      "profile": "cardiologist",
+      "Image": "https://t3.ftcdn.net/jpg/01/30/45/54/360_F_130455409_fTuinPO1LXECv5hlk9VBREnL6yowYUo3.jpg",
+      "id": 11
     }
   ],
   "LogedInDoctor": [
@@ -499,6 +517,21 @@
     },
     {
       "id": 7
+    },
+    {
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
     }
   ],
   "login": [
@@ -585,6 +618,12 @@
       "password": "",
       "username": "",
       "id": 14
+    },
+    {
+      "email": "ganesh@gmail.com",
+      "password": "12345",
+      "username": "ganesh yadav",
+      "id": 15
     }
   ]
 }

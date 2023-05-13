@@ -40,10 +40,10 @@ export const Recept = () => {
         
         <Card w={"40%"} m={"20px"} boxShadow={"xl"} ref={componentPDF}>
             <CardBody >
-                <Box mt='6' spacing='3' display={"flex"} justifyContent="space-evenly">
-                <Box>
+                <Box mt='6' spacing='3' >
+                {/* <Box>
                 <Image borderRadius="full" w={"150px"} h={"150px"} src={data.image} alt="doctor image"/>
-                </Box>
+                </Box> */}
                 <Box>
                 <Text size='md' as={"b"}> {data.doctor} </Text>
                 <Text>{data.profile}</Text>
