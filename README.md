@@ -3,7 +3,7 @@ https://vermillion-faun-c86694.netlify.app/
 
 # Medicure
 
-This is a small web application for booking appointments with doctors. It allows users to search for doctors by name, specialty, or location, view their availability, and book appointments online. The application is built using Javascript, React-Redux, HTML, CSS, and Chakra-UI, with some additional libraries like ApexCharts for data visualization.
+This is a small web application for booking appointments with doctors. It allows users to search for doctors by name, specialty, or location, view their availability, and book appointments online. The application is built using Javascript, React-Redux, HTML, CSS, and Chakra-UI, with some additional libraries like ApexCharts,React to print for data visualization.
 
 ## Features
 
