@@ -127,7 +127,7 @@ export const SinglePage = () => {
 
         <Divider orientation='horizontal' mb={"20px"}/>
 
-        <form  onSubmit={handleSubmit} m={"20px"} >
+        <form  onSubmit={handleSubmit} m={"20px"} border={"1px"}>
           <FormControl isRequired>
           <Box direction={'row'} display="flex" alignItems="center" gap={"30px"}>
           <Box>

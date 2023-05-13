@@ -11,9 +11,15 @@ import {
   HStack,
   Text,
   Heading,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription,
 } from "@chakra-ui/react";
 import PayAtHospital from "./PayAtHospital";
 import PaymentOptions from "./PaymentOptions";
+import { Recept } from "./Recept";
+import { useNavigate } from "react-router-dom";
 const PaymentPage = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
@@ -25,6 +31,7 @@ const PaymentPage = () => {
   const [isValidExpiryDate, setIsValidExpiryDate] = useState(false);
   const [isValidCvv, setIsValidCvv] = useState(false);
   const toast = useToast();
+  const navigate = useNavigate();
 
   const handlePayByCardClick = () => {
     setShowPaymentForm(true);
@@ -60,6 +67,7 @@ const PaymentPage = () => {
       // perform payment processing logic here
       setShowPaymentForm(false);
       setShowOtpForm(false);
+      
       toast({
         title: "Thank you!",
         description:
@@ -69,6 +77,7 @@ const PaymentPage = () => {
         isClosable: true,
         position: "top",
       });
+      
     }
   };
 
@@ -228,10 +237,13 @@ const PaymentPage = () => {
               >
                 Verify OTP
               </Button>
+              
             </Box>
           )}
+          
           <PaymentOptions />
           <PayAtHospital />
+          <Button colorScheme="green" mt="4" onClick={()=>navigate("/recept")}>View recept</Button>
         </Box>
         <Image src="https://www.maxhealthcare.in/img/illustration-speciality.svg" />
       </Box>

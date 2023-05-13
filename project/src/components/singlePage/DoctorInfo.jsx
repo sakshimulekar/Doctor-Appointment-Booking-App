@@ -19,7 +19,7 @@ export const DoctorInfo = () => {
       navigate("/form")
     }
   return (
-  <Box mt={"10px"} bg={"one"}>
+  <Box mt={"10px"} bg={"one"} pl={"20px"} pt={"20px"}>
 
     <Breadcrumb>
     <BreadcrumbItem>
@@ -30,60 +30,74 @@ export const DoctorInfo = () => {
       <BreadcrumbLink href='/bookingpage' color={"three"}>bookingpage</BreadcrumbLink>
     </BreadcrumbItem>
     </Breadcrumb>
+
     <Center>
     <Box  w={"90%"} pb={"30px"}>
-    <Card
-    direction={{ base: 'column', sm: 'row' }}
-    overflow='hidden'
-    variant='outline'
-    w="50%"
-    boxShadow='xs'
-    //border={"1px"}
-    p={"20px"}
-    mb={"50px"}
-    mr={"20px"}
-    mt={"20px"}
-    >
-    <Image
-    borderRadius='full'
-    boxSize='200px'
-    objectFit='cover'
-    mt={"20px"}
-    maxW={{ base: '100%', sm: '200px' }}
-    src={doctorsData.image}
-    alt='Caffe Latte'
-    />
+      <Box display={"flex"} justifyContent={"space-between"} >
+        <Box>
+          <Card
+            direction={{ base: 'column', sm: 'row' }}
+            overflow='hidden'
+            variant='outline'
+            w="90%"
+            h={"40vh"}
+            boxShadow='xs'
+            //border={"1px"}
+            p={"20px"}
+            mb={"50px"}
+            mr={"20px"}
+            mt={"100px"}
+          >
+          <Image
+            borderRadius='full'
+            boxSize='200px'
+            objectFit='cover'
+            mt={"20px"}
+            maxW={{ base: '100%', sm: '200px' }}
+            src={doctorsData.image}
+            alt='Caffe Latte'
+          />
 
-    <Stack>
-    <CardBody>
-      <Heading size='md'color={"three"}>{doctorsData.name}</Heading>
+          <Stack>
+          <CardBody>
+            <Heading size='md'color={"three"}>{doctorsData.name}</Heading>
 
-      <Text py='1' color={"three"}>{doctorsData.profile}</Text>
-      <Text color={"three"}>Hospital Address : {doctorsData.location}</Text>
-      <Text color={"three"}>Fees : {doctorsData.fees} EGP</Text>
-      <Text color={"three"}>{doctorsData.waiting_time} min</Text>
-    </CardBody>
+            <Text py='1' color={"three"}>{doctorsData.profile}</Text>
+            <Text color={"three"}>Hospital Address : {doctorsData.location}</Text>
+            <Text color={"three"}>Fees : {doctorsData.fees} EGP</Text>
+            <Text color={"three"}>{doctorsData.waiting_time} min</Text>
+          </CardBody>
 
-    <CardFooter>
-      <Button variant='solid' bgColor="two" color="white" onClick={handle}>
-        Book an Appointment
-      </Button>
-    </CardFooter>
+          <CardFooter>
+            <Button variant='solid' bgColor="two" color="white" onClick={handle}>
+              Book an Appointment
+            </Button>
+          </CardFooter>
+          </Stack>
 
-    </Stack>
-    </Card>
+          
+          </Card>
 
-    <Stack pt={"30px"} w={"70%"}>
-    <Stack direction={'row'} display="flex" alignItems="center" >
-      <Avatar src='https://bit.ly/broken-link' boxSize={6}/>
-      <Text fontSize={"xl"} as="b" color={"three"}>About Doctor</Text>  
-    </Stack>
-    <Text color={"three"}>{doctorsData.description}</Text>
-    </Stack>
+          <Stack pt={"30px"} w={"80%"}>
+            <Stack direction={'row'} display="flex" alignItems="center" >
+              <Avatar src='https://bit.ly/broken-link' boxSize={6}/>
+              <Text fontSize={"xl"} as="b" color={"three"}>About Doctor</Text>  
+            </Stack>
+            <Text color={"three"}>{doctorsData.description}</Text>
+          </Stack>
+        </Box>
+        <Box w={"80%"} mt={"20px"}>
+            <Image  w={"100%"} boxShadow={"2xl"}
+              src={require("../../assets/bookAppoint.jpg")}
+              alt="logo"
+            />
+        </Box>
+      </Box>
+      
 
-    <Stack direction={'row'} display="flex" alignItems="center" pt={"30px"}>
-      <Icon as={TimeIcon} color={"two"}/>
-      <Text color={"three"}>Available days for Appointment</Text>
+      <Stack direction={'row'} display="flex" alignItems="center" pt={"30px"}>
+        <Icon as={TimeIcon} color={"two"}/>
+        <Text color={"three"}>Available days for Appointment</Text>
       </Stack>
       
       <HStack >
@@ -119,20 +133,19 @@ export const DoctorInfo = () => {
       <ListItem>
         <ListIcon as={CheckCircleIcon} color='green.500' />
           Assumenda, quia temporibus eveniet a libero incidunt suscipit
+      </ListItem>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color='green.500' />
+            Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+      </ListItem>
+      <ListItem>
+        <ListIcon as={CheckCircleIcon} color='green.500' />
+            Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
         </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color='green.500' />
-            Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-          </ListItem>
-  
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color='green.500' />
-            Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-          </ListItem>
         </List>
-        </Box>
-        </Center>
-    </Box>
+      </Box>
+    </Center>
+  </Box>
   )
 }
 
