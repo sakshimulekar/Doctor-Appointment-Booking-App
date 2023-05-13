@@ -24,6 +24,7 @@ This is a small web application for booking appointments with doctors. It allows
 - Chakra-UI
 - ApexCharts
 - React-icons
+- React-to-print
 
 ## Getting Started
 
