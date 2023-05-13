@@ -11,7 +11,7 @@ function App() {
       <Navbar/>
       <Mainroutes />
       <Footer />
-      <Recept/>
+      
     </div>
   );
 }
