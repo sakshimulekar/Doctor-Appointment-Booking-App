@@ -11,181 +11,178 @@ import {
   Image,
   Text,
   useDisclosure,
+  Stack,
+  Flex,
 } from "@chakra-ui/react";
 
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem
-  
-} from '@chakra-ui/react'
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Link ,NavLink} from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
+// ...import statements
 
 export const Navbar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Box
-      display={"flex"}
-      justifyContent={"space-between"}
-      alignItems={"center"}
-      //p={"5"}
-      w={"100%"}
-      //border={"1px"}
-      boxShadow="md"
-      top={"0"}
-      backgroundColor={"one"}
+    <Flex
+      as="nav"
+      justifyContent="space-between"
+      alignItems="center"
+      p="5"
+      bg="one"
+      color="white"
     >
-      <Box bgColor={"one"} display={"flex"} alignItems={"center"}>
-        <IconButton
-          aria-label="Open Menu"
-          icon={<HamburgerIcon />}
-          size="md"
-          mr={2}
-          onClick={onOpen}
-          display={{ md: "none" }}
-        />
+      <Box display="flex" alignItems="center">
         <Image
           src={require("../../assets/m.png")}
-          //boxShadow={"xl"}
-          bgColor={"one"}
-          w={"100px"}
+          w="100px"
           alt="logo"
-          ml={"20px"}
+          ml="20px"
         />
       </Box>
+
       <Box
         display={{ base: "none", md: "flex" }}
-        gap={"5"}
-        alignItems={"center"}
-        //border={"1px"}
-        mr={"40px"}
+        alignItems="center"
+        gap="8"
+        flexGrow="1"
+        justifyContent="flex-end"
       >
         <NavLink to={"/"}>
-          <Box>
-            <Text color={"#61876e"} as={"b"}  _hover={{ color:"#00796B",fontSize:"20px" }}>
-              Home
-            </Text>{" "}
-          </Box>
+          <Text
+            color="#61876e"
+            as="b"
+            _hover={{ color: "#00796B", fontSize: "20px" }}
+          >
+            Home
+          </Text>{" "}
         </NavLink>
-        <Box >
-          <Text color={"#61876e"} as={"b"}  _hover={{ color:"#00796B",fontSize:"20px" }}>
+        <NavLink to={"/login"}>
+          <Text
+            color="#61876e"
+            as="b"
+            _hover={{ color: "#00796B", fontSize: "20px" }}
+          >
             About Us
           </Text>{" "}
-        </Box>
-        {/* <Box _hover={{ textDecoration: "underline" }}>
-          <Text color={"#61876e"} as={"b"}>
-            Services
+        </NavLink>
+        {/* Add Services */}
+        <NavLink to={"/bookingpage"}>
+          <Text
+            color="#61876e"
+            as="b"
+            _hover={{ color: "#00796B", fontSize: "20px" }}
+          >
+            Appointment
           </Text>{" "}
-        </Box> */}
-        <Link to={"/bookingpage"}>
-          <Box >
-            <Text color={"#61876e"} as={"b"}  _hover={{ color:"#00796B",fontSize:"20px" }}>
-              Appointment
-            </Text>{" "}
-          </Box>
-        </Link>
-        <Link to={"/checkAppoint"}>
-          <Box>
-            <Text color={"#61876e"} as={"b"}  _hover={{ color:"#00796B",fontSize:"20px" }}>
-              Booking
-            </Text>{" "}
-          </Box>
-        </Link>
-        {/* <Link to={"/login"}>
-          <Box _hover={{ textDecoration: "underline" }}>
-            <Button colorScheme="two" variant="outline" color={"two"}>
-              Sign-up
-            </Button>
-          </Box>
-        </Link> */}
+        </NavLink>
+        <NavLink to={"/checkAppoint"}>
+          <Text
+            color="#61876e"
+            as="b"
+            _hover={{ color: "#00796B", fontSize: "20px" }}
+          >
+            Booking
+          </Text>{" "}
+        </NavLink>
         <Menu>
-  <MenuButton as={"b"}  _hover={{ color:"#00796B",fontSize:"20px" }}><Text color={"two"}>Sign up</Text></MenuButton>
-  <MenuList>
-    <MenuItem as='a' href='/login'>User Login</MenuItem>
-    <MenuItem as='a' href='/doctorloginpage'>Doctor Login</MenuItem>
-    <MenuItem as='a' href='/adminLogin'>Admin Login</MenuItem>
-  </MenuList>
-</Menu>
-        {/* <Link to={"/doctorpage"}>
-          <Box _hover={{ textDecoration: "underline" }}>
-            <Button colorScheme="two" variant="outline" color={"two"}>
-              Doctor
-            </Button>
-          </Box>
-        </Link> */}
+          <MenuButton as="b" _hover={{ color: "#00796B", fontSize: "20px" }}>
+            <Text color="two">Sign up</Text>
+          </MenuButton>
+          <MenuList>
+            <MenuItem as="a" href="/login">
+              User Login
+            </MenuItem>
+            <MenuItem as="a" href="/doctorloginpage">
+              Doctor Login
+            </MenuItem>
+            <MenuItem as="a" href="/adminLogin">
+              Admin Login
+            </MenuItem>
+          </MenuList>
+        </Menu>
       </Box>
-      <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
-          <DrawerBody>
-            <Box display="flex" flexDirection="column" gap={4}>
-              <Link to={"/"}>
-                <Box onClick={onClose} _hover={{ textDecoration: "underline" }}>
-                  <Text color={"#61876e"} as={"b"}>
+
+      {/* Hamburger Icon for small screens */}
+      <IconButton
+        aria-label="Open Menu"
+        icon={<HamburgerIcon />}
+        size="md"
+        onClick={onOpen}
+        display={{ base: "flex", md: "none" }}
+      />
+
+      {/* Drawer for small screens */}
+      <Box>
+        <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+          <DrawerOverlay />
+          <DrawerContent>
+            <DrawerHeader borderBottomWidth="1px">Menu</DrawerHeader>
+            <DrawerBody>
+              <Stack direction="column" spacing={4}>
+                <Link to={"/"} onClick={onClose}>
+                  <Text
+                    color="#61876e"
+                    as="b"
+                    _hover={{ textDecoration: "underline" }}
+                  >
                     Home
                   </Text>{" "}
-                </Box>
-              </Link>
-              <Link to={"/login"}>
-                <Box onClick={onClose} _hover={{ textDecoration: "underline" }}>
-                  <Text color={"#61876e"} as={"b"}>
+                </Link>
+                <Link to={"/login"} onClick={onClose}>
+                  <Text
+                    color="#61876e"
+                    as="b"
+                    _hover={{ textDecoration: "underline" }}
+                  >
                     About Us
                   </Text>{" "}
-                </Box>
-              </Link>
-              <Link to={"/login"}>
-                <Box onClick={onClose} _hover={{ textDecoration: "underline" }}>
-                  <Text color={"#61876e"} as={"b"}>
-                    Servies
-                  </Text>{" "}
-                </Box>
-              </Link>
-              <Link to={"/bookingpage"}>
-                <Box onClick={onClose} _hover={{ textDecoration: "underline" }}>
-                  <Text color={"#61876e"} as={"b"}>
+                </Link>
+                {/* Add Services */}
+                <Link to={"/bookingpage"} onClick={onClose}>
+                  <Text
+                    color="#61876e"
+                    as="b"
+                    _hover={{ textDecoration: "underline" }}
+                  >
                     Appointment
                   </Text>{" "}
-                </Box>
-              </Link>
-              <Link to={"/edit"}>
-                <Box onClick={onClose} _hover={{ textDecoration: "underline" }}>
-                  <Text color={"#61876e"} as={"b"}>
+                </Link>
+                <Link to={"/edit"} onClick={onClose}>
+                  <Text
+                    color="#61876e"
+                    as="b"
+                    _hover={{ textDecoration: "underline" }}
+                  >
                     Booking
                   </Text>{" "}
-                </Box>
-              </Link>
-              <Link to={"/login"}>
-                <Box onClick={onClose} _hover={{ textDecoration: "underline" }}>
+                </Link>
+                <Link to={"/login"} onClick={onClose}>
                   <Button
                     colorScheme="two"
                     variant="outline"
-                    color={"two"}
+                    color="two"
                     w="100%"
                   >
                     Sign-up
                   </Button>
-                </Box>
-              </Link>
-              <Link to={"/doctorloginpage"}>
-                <Box onClick={onClose} _hover={{ textDecoration: "underline" }}>
+                </Link>
+                <Link to={"/doctorloginpage"} onClick={onClose}>
                   <Button
                     colorScheme="two"
                     variant="outline"
-                    color={"two"}
+                    color="two"
                     w="100%"
                   >
                     Doctor
                   </Button>
-                </Box>
-              </Link>
-            </Box>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
-    </Box>
+                </Link>
+              </Stack>
+            </DrawerBody>
+          </DrawerContent>
+        </Drawer>
+      </Box>
+    </Flex>
   );
 };

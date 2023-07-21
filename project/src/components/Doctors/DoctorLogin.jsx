@@ -1,4 +1,4 @@
-//doctor login 
+//doctor login
 import React, { useEffect, useState } from "react";
 import { Box, FormLabel, Input, FormControl, Button } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
@@ -30,7 +30,7 @@ export const DoctorLogin = () => {
   }
 
   function validateLogin(username, password) {
-    const user = "janesmith@gmail.com"===username&& "12345"===password
+    const user = "janesmith@gmail.com" === username && "12345" === password;
     return user !== undefined;
   }
 
@@ -39,7 +39,7 @@ export const DoctorLogin = () => {
     const isValid = validateLogin(username, password);
 
     const user = validateDoctor(username, password);
-console.log("user",user);
+    console.log("user", user);
     dispatch(postLoginDoctorFn(user));
 
     if (isValid) {
@@ -74,6 +74,7 @@ console.log("user",user);
           </Button>
         </FormControl>
       </Box>
-    </Box>
-  );
+        
+    </Box>
+  );
 };
