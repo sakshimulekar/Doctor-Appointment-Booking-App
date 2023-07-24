@@ -9,7 +9,7 @@ import {
 } from "./actionType";
 import axios from "axios";
 
-const url = "http://localhost:8080/patients";
+const url = "https://medicure.onrender.com/patients";
 
 export const postPatient = (obj) => (dispatch) => {
   dispatch({ type: POST_PATIENT_REQ });
@@ -41,7 +41,7 @@ export const updateStatusFn = (id, status) => (dispatch) => {
   dispatch({ type: GET_PATIENT_REQ });
 
   return axios
-    .patch(`http://localhost:8080/patients/${id}`, { status: !status })
+    .patch(`https://medicure.onrender.com/patients/${id}`, { status: !status })
     .then((res) => {
       dispatch({ type: UPDATE_STATUS, payload: res.data });
     });

@@ -23,7 +23,7 @@ export const Navbar = () => {
       <Box display={"flex"} gap={"5"} alignItems={"center"}>
         <Link to={"/"}>
           <Box _hover={{ textDecoration: "underline" }}>
-            <Text color={"#61876e"} as={"b"}>
+            <Text color={"#496854"} as={"b"}>
               Home
             </Text>{" "}
           </Box>

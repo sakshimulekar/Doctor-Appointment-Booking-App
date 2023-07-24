@@ -162,7 +162,7 @@ export const Navbar = () => {
                   <Button
                     colorScheme="two"
                     variant="outline"
-                    color="two"
+                    // color="two"
                     w="100%"
                   >
                     Sign-up

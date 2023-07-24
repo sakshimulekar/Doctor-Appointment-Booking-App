@@ -584,7 +584,7 @@ export const HomePage = () => {
           Get Your Valuable Feedback
         </Heading>
       </Box>
-      <Box w="30%" m="auto" p="15">
+      <Box w="auto" m="auto" p="15">
         <InputGroup size="md">
           <Input
             pr="4.5rem"

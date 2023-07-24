@@ -80,7 +80,7 @@
       "rating": 4.9,
       "fees": "$400",
       "location": "666 Oak St, Anytown, USA",
-      "status": false,
+      "status": true,
       "gender": "female",
       "category": "brain"
     },
@@ -136,7 +136,7 @@
       "rating": 4.9,
       "fees": "$400",
       "location": "666 Oak St, Anytown, USA",
-      "status": false,
+      "status": true,
       "gender": "male",
       "category": "brain"
     },
@@ -192,7 +192,7 @@
       "rating": 4.9,
       "fees": "$450",
       "location": "456 Oak St, Anytown, USA",
-      "status": false,
+      "status": true,
       "gender": "male",
       "category": "brain"
     },
@@ -220,7 +220,7 @@
       "rating": 4.8,
       "fees": "$300",
       "location": "101 Elm St, Anytown, USA",
-      "status": false,
+      "status": true,
       "gender": "male",
       "category": "dentist"
     },
@@ -234,7 +234,7 @@
       "rating": 4.8,
       "fees": "$150",
       "location": "123 Main St, Anytown USA",
-      "status": false,
+      "status": true,
       "gender": "female",
       "category": "female disorder"
     },
@@ -248,7 +248,7 @@
       "rating": 4.5,
       "fees": "$200",
       "location": "456 Oak St, Anytown USA",
-      "status": false,
+      "status": true,
       "gender": "male",
       "category": "bone"
     },
@@ -276,9 +276,25 @@
       "rating": 4.6,
       "fees": "$250",
       "location": "1010 Pine St, Anytown USA",
-      "status": false,
+      "status": true,
       "gender": "male",
       "category": "brain"
+    },
+    {
+      "name": "new doctor",
+      "image": "https://placehold.co/500x350/png",
+      "profile": "",
+      "description": "",
+      "location": "",
+      "email": "",
+      "password": "",
+      "waiting_time": "",
+      "fees": "",
+      "category": "",
+      "gender": "",
+      "rating": "",
+      "status": true,
+      "id": 21
     }
   ],
   "DocData": [
@@ -354,7 +370,7 @@
       "gender": "male",
       "description": "main bimar hoon",
       "time": "11.30 AM",
-      "status": true,
+      "status": false,
       "doctor": "Dr. Jane Smith",
       "hospital": "123 Main St, Anytown, USA",
       "fees": "$300",
@@ -481,6 +497,42 @@
       "profile": "cardiologist",
       "Image": "https://t3.ftcdn.net/jpg/01/30/45/54/360_F_130455409_fTuinPO1LXECv5hlk9VBREnL6yowYUo3.jpg",
       "id": 11
+    },
+    {
+      "date": "2023-07-23",
+      "patient_name": "sonu",
+      "Address": "Sarkari school wali gali dundahera gurgaon",
+      "mobile": "+917011966613",
+      "email": "Snu0929@gmail.com",
+      "age": "25",
+      "gender": "male",
+      "description": "xdfgvfg",
+      "time": "4.00 PM",
+      "status": false,
+      "doctor": "Dr. Jane Smith",
+      "hospital": "123 Main St, Anytown, USA",
+      "fees": "$300",
+      "profile": "cardiologist",
+      "Image": "https://t3.ftcdn.net/jpg/01/30/45/54/360_F_130455409_fTuinPO1LXECv5hlk9VBREnL6yowYUo3.jpg",
+      "id": 12
+    },
+    {
+      "date": "2023-07-24",
+      "patient_name": "sonu",
+      "Address": "Sarkari school wali gali dundahera gurgaon",
+      "mobile": "+917011966613",
+      "email": "Snu0929@gmail.com",
+      "age": "25",
+      "gender": "male",
+      "description": "xdfgvfg",
+      "time": "4.00 PM",
+      "status": false,
+      "doctor": "Dr. John Doe",
+      "hospital": "456 Elm St, Anytown, USA",
+      "fees": "$350",
+      "profile": "neurologist",
+      "Image": "https://img.freepik.com/free-photo/smiling-touching-arms-crossed-room-hospital_1134-799.jpg",
+      "id": 13
     }
   ],
   "LogedInDoctor": [
@@ -517,21 +569,6 @@
     },
     {
       "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "id": 9
-    },
-    {
-      "id": 10
-    },
-    {
-      "id": 11
-    },
-    {
-      "id": 12
     }
   ],
   "login": [
@@ -624,6 +661,24 @@
       "password": "12345",
       "username": "ganesh yadav",
       "id": 15
+    },
+    {
+      "email": "kalu@gmail.com",
+      "password": "kalu",
+      "username": "kalu",
+      "id": 16
+    },
+    {
+      "email": "dfg@fgj",
+      "password": "hj",
+      "username": "cvn ",
+      "id": 17
+    },
+    {
+      "email": "sonu@gmail.com",
+      "password": "sonu",
+      "username": "sonu",
+      "id": 18
     }
   ]
 }
