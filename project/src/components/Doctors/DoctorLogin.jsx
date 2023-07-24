@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import {
   Box,
@@ -34,7 +35,9 @@ export const DoctorLogin = () => {
   }
 
   function validateLogin(username, password) {
+
     return "janesmith@gmail.com" === username && "12345" === password;
+
   }
 
   const handleSubmit = () => {
@@ -85,8 +88,14 @@ export const DoctorLogin = () => {
           >
             Login
           </Button>
+
         </Box>
       </Center>
+
+        </FormControl>
+      </Box>
+        
+
     </Box>
   );
 };
