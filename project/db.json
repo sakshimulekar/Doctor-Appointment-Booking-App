@@ -499,7 +499,6 @@
       "id": 11
     },
     {
-
       "patient_name": "sonu",
       "Address": "Sarkari school wali gali dundahera gurgaon",
       "mobile": "+917011966613",
@@ -507,7 +506,6 @@
       "age": "25",
       "gender": "male",
       "description": "xdfgvfg",
-
       "status": false,
       "doctor": "Dr. Jane Smith",
       "hospital": "123 Main St, Anytown, USA",
@@ -515,7 +513,6 @@
       "profile": "cardiologist",
       "Image": "https://t3.ftcdn.net/jpg/01/30/45/54/360_F_130455409_fTuinPO1LXECv5hlk9VBREnL6yowYUo3.jpg",
       "id": 12
-
     }
   ],
   "LogedInDoctor": [
@@ -534,13 +531,6 @@
       "category": "heart",
       "email": "janesmith@gmail.com",
       "password": "12345"
-    },
-    {
-      "id": 2
-    },
-    {
-      "id": 3
-
     }
   ],
   "login": [
@@ -644,7 +634,6 @@
       "email": "",
       "password": "",
       "username": "",
-
     }
   ]
 }
