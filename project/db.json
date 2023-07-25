@@ -499,7 +499,7 @@
       "id": 11
     },
     {
-      "date": "2023-07-23",
+
       "patient_name": "sonu",
       "Address": "Sarkari school wali gali dundahera gurgaon",
       "mobile": "+917011966613",
@@ -507,7 +507,7 @@
       "age": "25",
       "gender": "male",
       "description": "xdfgvfg",
-      "time": "4.00 PM",
+
       "status": false,
       "doctor": "Dr. Jane Smith",
       "hospital": "123 Main St, Anytown, USA",
@@ -515,24 +515,7 @@
       "profile": "cardiologist",
       "Image": "https://t3.ftcdn.net/jpg/01/30/45/54/360_F_130455409_fTuinPO1LXECv5hlk9VBREnL6yowYUo3.jpg",
       "id": 12
-    },
-    {
-      "date": "2023-07-24",
-      "patient_name": "sonu",
-      "Address": "Sarkari school wali gali dundahera gurgaon",
-      "mobile": "+917011966613",
-      "email": "Snu0929@gmail.com",
-      "age": "25",
-      "gender": "male",
-      "description": "xdfgvfg",
-      "time": "4.00 PM",
-      "status": false,
-      "doctor": "Dr. John Doe",
-      "hospital": "456 Elm St, Anytown, USA",
-      "fees": "$350",
-      "profile": "neurologist",
-      "Image": "https://img.freepik.com/free-photo/smiling-touching-arms-crossed-room-hospital_1134-799.jpg",
-      "id": 13
+
     }
   ],
   "LogedInDoctor": [
@@ -557,18 +540,7 @@
     },
     {
       "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "id": 5
-    },
-    {
-      "id": 6
-    },
-    {
-      "id": 7
+
     }
   ],
   "login": [
@@ -645,40 +617,34 @@
       "id": 12
     },
     {
-      "email": "",
-      "password": "",
-      "username": "",
-      "id": 13
-    },
-    {
-      "email": "",
-      "password": "",
-      "username": "",
-      "id": 14
-    },
-    {
       "email": "ganesh@gmail.com",
       "password": "12345",
       "username": "ganesh yadav",
       "id": 15
     },
     {
-      "email": "kalu@gmail.com",
-      "password": "kalu",
-      "username": "kalu",
+      "email": "shakshi@gmail.com",
+      "password": "12345",
+      "username": "shakshi",
       "id": 16
     },
     {
-      "email": "dfg@fgj",
-      "password": "hj",
-      "username": "cvn ",
+      "email": "sonu@gmail.com",
+      "password": "1234",
+      "username": "sonu",
       "id": 17
     },
     {
-      "email": "sonu@gmail.com",
-      "password": "sonu",
-      "username": "sonu",
+      "email": "",
+      "password": "",
+      "username": "shakshi",
       "id": 18
+    },
+    {
+      "email": "",
+      "password": "",
+      "username": "",
+
     }
   ]
 }
