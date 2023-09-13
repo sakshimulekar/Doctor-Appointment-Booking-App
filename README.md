@@ -1,4 +1,4 @@
-# stormy-prose-3801
+# Doctor-Appointment-Booking-App
 https://medicure-eta.vercel.app/
 
 # Medicure
